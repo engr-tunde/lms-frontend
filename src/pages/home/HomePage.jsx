@@ -179,7 +179,7 @@ const HomePage = () => {
                         </div>
                     </div>
                     {/* 9th section */} 
-                    <div className="w-full pt-[10px]  pb-[50px] flex bg-img  flex-col justify-center items-center">                              
+                    <div className="w-full pt-2.5  pb-[50px] flex bg-img  flex-col justify-center items-center">                              
                         <div className="flex flex-col items-center justify-start h-[550px]">
                             <div className="flex flex-col justify-start items-center w-[90%]  gap-4 ">
                                 <h2 className="text-[58px] font-bold w-[60%]  leading-tight text-white text-center">Upcoming Courses These will be started soon</h2>
@@ -227,21 +227,21 @@ const HomePage = () => {
                         </div>
                     </div>
                     {/* 10th section */} 
-                    <div className="w-full pt-[10px]  pb-[50px] flex flex-col justify-center items-center">
+                    <div className="w-full pt-2.5 pb-[50px] flex flex-col justify-center items-center">
                         <div className="flex flex-col justify-center items-center w-[90%]  gap-4">
                             <h2 className="text-[50px] font-semibold">What our students say</h2>
                             <p className=" text-center w-[60%] text-[21px] font-medium">
                                 "Learning at LOGO has been an enriching experience. The instructors are not only skilled but incredibly passionate about teaching. The immersive approach has significantly boosted my confidence in speaking the language."
                             </p>
                             <div className="flex flex-col justify-center items-center ] w-[90%]  gap-2">
-                                <div className="border-[2px] border-black rounded-full size-[85px]"><img src="" alt="" /></div>
+                                <div className="border-2 border-black rounded-full size-[85px]"><img src="" alt="" /></div>
                                 <h3 className="text-[22px] font-medium">Macky Q. Anderson</h3>
                                 <p className="text-21">Web Desginer, Web Company</p>
                             </div>
                             <div className="flex gap-1">
-                                <div className="p-1 border-black border-[2px] rounded-full size-5 "><div className="bg-black size-full rounded-full"></div></div>
-                                <div className="p-1 border-black border-[2px] rounded-full size-5 "><div className="bg-black size-full rounded-full hidden"></div></div>
-                                <div className="p-1 border-black border-[2px] rounded-full size-5 "><div className="bg-black size-full rounded-full hidden"></div></div>
+                                <div className="p-1 border-black border-2 rounded-full size-5 "><div className="bg-black size-full rounded-full"></div></div>
+                                <div className="p-1 border-black border-2 rounded-full size-5 "><div className="bg-black size-full rounded-full hidden"></div></div>
+                                <div className="p-1 border-black border-2 rounded-full size-5 "><div className="bg-black size-full rounded-full hidden"></div></div>
                             </div>
                         </div>
                     </div>
