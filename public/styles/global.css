@@ -1,0 +1,21 @@
+@import "tailwindcss";
+
+
+ody {
+    
+}
+
+.bg-img{
+    background-image: url("/public/images/new_health-img.jpg");
+}
+
+.bg-slide1{
+    background-image: url("/public/images/bg-shape1.png");
+}
+
+.course-img {
+    background-image: url("/public/images/about2.jpg");
+}
+.primary-btn {
+  @apply bg-[rgb(254,194,0)]  text-black hover:scale-110 ease-in duration-200 rounded-md cursor-pointer;
+}
