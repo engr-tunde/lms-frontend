@@ -84,60 +84,56 @@ export const adminMenuDropdown = [
 
 export const courseContent = [
   {
+    title:"The AI Engineer Course 2025: Complete AI Engineer Bootcamp",
+    tag:"Bestseller",
+    image:"soft-health-skills.jpg",
+    discount: "#9900",
+    price:"#10,900",
+
+  },
+  {
+    title:"The AI Engineer Course 2025: Complete AI Engineer Bootcamp",
+    tag:"Bestseller",
+    image:"soft-health-skills.jpg",
+    discount: "#9900",
+    price:"#10,900",
+
+  },
+  {
+    title:"The AI Engineer Course 2025: Complete AI Engineer Bootcamp",
+    tag:"Bestseller",
+    image:"soft-health-skills.jpg",
+    discount: "#9900",
+    price:"#10,900",
+
+  },
+  {
     cost:"$69",
-    title:"8 Hour Initial Administrator Training",
-    details:"Meets TX HHSC Requirement §558.259(c) for HCSSAs. HHS Approved 8 hours of required pre-appointment clock hours for all license types including PAS, home health and hospice Administrators/Alternate Administrators.",
-    image:"courses-instructor.jpg",
-    instructorName: "Steven James",
-    positon:"instructor",
-     action:"Enrol Now"
-
-  },
-  {
-    cost:"$79",
-    title:"10 Hour Initial Administrator Training",
-    details:"Meets TX HHSC Requirement §558.259(c) for HCSSAs. HHS Approved 8 hours of required pre-appointment clock hours for all license types including PAS, home health and hospice Administrators/Alternate Administrators.",
-    image:"courses-instructor.jpg",
-    instructorName: "Steven James",
-    positon:"instructor",
-    action:"Enrol Now"
-
-  },
-  {
-    cost:"$89",
-    title:"12 Hour Initial Administrator Training",
-    details:"Meets TX HHSC Requirement §558.259(c) for HCSSAs. HHS Approved 8 hours of required pre-appointment clock hours for all license types including PAS, home health and hospice Administrators/Alternate Administrators.",
-    image:"courses-instructor.jpg",
-    instructorName: "Steven James",
-    positon:"instructor",
-     action:"Enrol Now"
+    title:"The AI Engineer Course 2025: Complete AI Engineer Bootcamp",
+    tag:"Bestseller",
+    image:"soft-health-skills.jpg",
+    discount: "#9900",
+    price:"#10,900",
 
   },
 ]
 
 export const briefContent = [
   {
-    cost:"$69",
-    title:"8 Hour Initial Administrator Training",
-    details:"Meets TX HHSC Requirement §558.259(c) for HCSSAs. HHS Approved 8 hours of required pre-appointment clock hours for all license types including PAS, home health and hospice Administrators",
+    people:"1.9M+",
+    title:"General First Aid",
+    img: "/images/health_10.jpg"
+  },
+  {
+    people:"14M+",
+    title:"General First Aid",
+    img: "/images/health_10.jpg"
     
   },
   {
-    cost:"$79",
-    title:"10 Hour Initial Administrator Training",
-    details:"Meets TX HHSC Requirement §558.259(c) for HCSSAs. HHS Approved 8 hours of required pre-appointment clock hours for all license types including PAS, home health and hospice Administrators.",
-    
-  },
-  {
-    cost:"$89",
-    title:"12 Hour Initial Administrator Training",
-    details:"Meets TX HHSC Requirement §558.259(c) for HCSSAs. HHS Approved 8 hours of required pre-appointment clock hours for all license types including PAS, home health and hospice Administrators",
-    
-  },
-  {
-    cost:"$89",
-    title:"12 Hour Initial Administrator Training",
-    details:"Meets TX HHSC Requirement §558.259(c) for HCSSAs. HHS Approved 8 hours of required pre-appointment clock hours for all license types including PAS, home health and hospice Administrators",
+    people:"8.1+",
+    title:"General First Aid",
+    img: "/images/mental_health.png"
     
   },
 ]
@@ -147,25 +143,230 @@ export const dashboardCards = [
     counts: 0,
     title: "In progress course",
     details: "More Info",
-    className: "bg-[rgb(21,112,187)]"
+    className: "bg-[rgb(21,112,187)]",
+    IoIcon: "IoMdBook"
   },
   {
     counts: 0,
     title: "Completed",
     details: "More Info",
-    className: "bg-[rgb(254,194,0)]"
+    className: "bg-[rgb(254,194,0)]",
+    IoIcon: "IoMdCheckmarkCircleOutline"
   },
   {
     counts: 0,
-    title: "certificates",
+    title: "Certificates",
     details: "More Info",
-    className: "bg-[rgb(21,112,187)]"
+    className: "bg-[rgb(21,112,187)]",
+    IoIcon: "FaCertificate"
     // rgb(255,193,7)
   },
   {
     counts: 0,
     title: "polocies",
     details: "More Info",
-    className: "bg-[rgb(254,194,0)]"
+    className: "bg-[rgb(254,194,0)]",
+    IoIcon: "FaGavel"
   },
 ]
+
+export const slides = [
+  {
+    titleA:"The AI Engineer Course 2025: Complete AI Engineer Bootcamp",
+    tagA:"Bestseller",
+    imageA:"soft-health-skills.jpg",
+    discountA: "#9900",
+    priceA:"#10,900",
+    titleB:"The AI Engineer Course 2025: Complete AI Engineer Bootcamp",
+    tagB:"Bestseller",
+    imageB:"soft-health-skills.jpg",
+    discountB: "#9900",
+    priceB:"#10,900",
+    titleC:"The AI Engineer Course 2025: Complete AI Engineer Bootcamp",
+    tagC:"Bestseller",
+    imageC:"soft-health-skills.jpg",
+    discountC: "#9900",
+    priceC:"#10,900",
+    titleD:"The AI Engineer Course 2025: Complete AI Engineer Bootcamp",
+    tagD:"Bestseller",
+    imageD:"soft-health-skills.jpg",
+    discountD: "#9900",
+    priceD:"#10,900",
+
+  },
+  {
+    titleA:"The AI Engineer Course 2025: Complete AI Engineer Bootcamp",
+    tagA:"Bestseller",
+    imageA:"soft-health-skills.jpg",
+    discountA: "#9900",
+    priceA:"#10,900",
+    titleB:"The AI Engineer Course 2025: Complete AI Engineer Bootcamp",
+    tagB:"Bestseller",
+    imageB:"soft-health-skills.jpg",
+    discountB: "#9900",
+    priceB:"#10,900",
+    titleC:"The AI Engineer Course 2025: Complete AI Engineer Bootcamp",
+    tagC:"Bestseller",
+    imageC:"soft-health-skills.jpg",
+    discountC: "#9900",
+    priceC:"#10,900",
+    titleD:"The AI Engineer Course 2025: Complete AI Engineer Bootcamp",
+    tagD:"Bestseller",
+    imageD:"soft-health-skills.jpg",
+    discountD: "#9900",
+    priceD:"#10,900",
+
+  },
+  {
+    titleA:"The AI Engineer Course 2025: Complete AI Engineer Bootcamp",
+    tagA:"Bestseller",
+    imageA:"soft-health-skills.jpg",
+    discountA: "#9900",
+    priceA:"#10,900",
+    titleB:"The AI Engineer Course 2025: Complete AI Engineer Bootcamp",
+    tagB:"Bestseller",
+    imageB:"soft-health-skills.jpg",
+    discountB: "#9900",
+    priceB:"#10,900",
+    titleC:"The AI Engineer Course 2025: Complete AI Engineer Bootcamp",
+    tagC:"Bestseller",
+    imageC:"soft-health-skills.jpg",
+    discountC: "#9900",
+    priceC:"#10,900",
+    titleD:"The AI Engineer Course 2025: Complete AI Engineer Bootcamp",
+    tagD:"Bestseller",
+    imageD:"soft-health-skills.jpg",
+    discountD: "#9900",
+    priceD:"#10,900",
+
+  },
+  {
+    titleA:"The AI Engineer Course 2025: Complete AI Engineer Bootcamp",
+    tagA:"Bestseller",
+    imageA:"soft-health-skills.jpg",
+    discountA: "#9900",
+    priceA:"#10,900",
+    titleB:"The AI Engineer Course 2025: Complete AI Engineer Bootcamp",
+    tagB:"Bestseller",
+    imageB:"soft-health-skills.jpg",
+    discountB: "#9900",
+    priceB:"#10,900",
+    titleC:"The AI Engineer Course 2025: Complete AI Engineer Bootcamp",
+    tagC:"Bestseller",
+    imageC:"soft-health-skills.jpg",
+    discountC: "#9900",
+    priceC:"#10,900",
+    titleD:"The AI Engineer Course 2025: Complete AI Engineer Bootcamp",
+    tagD:"Bestseller",
+    imageD:"soft-health-skills.jpg",
+    discountD: "#9900",
+    priceD:"#10,900",
+
+  }, 
+
+]
+
+// courseA, detailsA, picA, titleA, identityA, courseB, detailsB, picB, titleB, identityB, priceB, slide,
+//     courseC, detailsC, picC, titleC, identityC, courseD, detailsD, picD, titleD, identityD
+
+export const feedback = [
+  {
+    detailsA: "Udemy was truly a game-changer and a great guide for me as we brought Dimensional to life.", 
+    picA: "Alvin_Lim.jpeg",
+    identityA: "Alvin Lim",
+    titleA: "Technical Co-Founder, CTO at Dimensional",
+    courseA: "web development", 
+    detailsB: "Udemy was truly a game-changer and a great guide for me as we brought Dimensional to life.", 
+    picB: "Alvin_Lim.jpeg", 
+    titleB: "Technical Co-Founder, CTO at Dimensional", 
+    identityB: "Alvin Lim",
+    courseB: "web development",
+    detailsC: "Udemy was truly a game-changer and a great guide for me as we brought Dimensional to life.", 
+    picC: "Alvin_Lim.jpeg",
+    identityC: "Alvin Lim",
+    titleC: "Technical Co-Founder, CTO at Dimensional",
+    courseC: "web development", 
+  },
+  {
+    detailsA: "Udemy was truly a game-changer and a great guide for me as we brought Dimensional to life.", 
+    picA: "Alvin_Lim.jpeg",
+    identityA: "Alvin Lim",
+    titleA: "Technical Co-Founder, CTO at Dimensional",
+    courseA: "web development", 
+    detailsB: "Udemy was truly a game-changer and a great guide for me as we brought Dimensional to life.", 
+    picB: "Alvin_Lim.jpeg", 
+    titleB: "Technical Co-Founder, CTO at Dimensional", 
+    identityB: "Alvin Lim",
+    courseB: "web development",
+    detailsC: "Udemy was truly a game-changer and a great guide for me as we brought Dimensional to life.", 
+    picC: "Alvin_Lim.jpeg",
+    identityC: "Alvin Lim",
+    titleC: "Technical Co-Founder, CTO at Dimensional",
+    courseC: "web development",
+
+  },
+  {
+    detailsA: "Udemy was truly a game-changer and a great guide for me as we brought Dimensional to life.", 
+    picA: "Alvin_Lim",
+    identityA: "Alvin Lim.jpeg",
+    titleA: "Technical Co-Founder, CTO at Dimensional",
+    courseA: "web development", 
+    detailsB: "Udemy was truly a game-changer and a great guide for me as we brought Dimensional to life.", 
+    picB: "Alvin_Lim.jpeg", 
+    titleB: "Technical Co-Founder, CTO at Dimensional", 
+    identityB: "Alvin Lim",
+    courseB: "web development",
+    detailsC: "Udemy was truly a game-changer and a great guide for me as we brought Dimensional to life.", 
+    picC: "Alvin_Lim.jpeg",
+    identityC: "Alvin Lim",
+    titleC: "Technical Co-Founder, CTO at Dimensional",
+    courseC: "web development", 
+  },
+
+]
+
+export const stats = [
+  {
+    number: "81M",
+    reaction: "Learners"
+  },
+  {
+    number: "85K",
+    reaction: "instructors"
+  },
+  {
+    number: "250K",
+    reaction: "course"
+  },
+  
+]
+
+export const statsSecond = [
+  {
+    number: "1.1B",
+    reaction: "Course Enrollment"
+  },
+  {
+    number: "17K",
+    reaction: "Enterprise Clients"
+  }
+]
+
+export const FirmFeedBack = [
+  {
+    details: "Udemy fit us like a glove. Their team curates fresh, up-to-date courses from their marketplace and makes them available to customers.",
+    clientName: "Varun Patil",
+    title: "Executive Training Manager"
+  },
+  {
+    details: "In total, it was a big success, I would get emails about what a fantastic resource it was.",
+    clientName: "Varun Patil",
+    title: "Executive Training Manager"
+  },
+  {
+    details: "Udemy responds to the needs of the business in an agile and global manner. It’s truly the best solution for our employees and their careers.",
+    clientName: "Luz Santillana Romero",
+    title: "Development and Engagement Director"
+  },
+]
+

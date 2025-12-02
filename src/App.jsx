@@ -4,8 +4,12 @@ import HomePage from './pages/home/HomePage';
 // import Login from './pages/auth/Login';
 // import AuthLayout from './layouts/AuthLayout';
 import LandingPageLayout from "./layout/LandingPageLayout";
-// import DashboardLayout from './layouts/DashbordLayout';
-// import DashboardPage from './pages/dashboard/DashboardPage';
+import AboutPage from "./pages/about/AboutPage";
+import DashboardLayout from "./layout/DashboardLayout";
+import DashboardPage from "./pages/dashboard/DashboardPage";
+
+
+
 // import CouresPage from './pages/courses/CoursePage';
 // import SignUp from './pages/auth/SingUp';
 
@@ -19,13 +23,14 @@ function App() {
             <Route path="/login" element={<Login />} />
              <Route path="/register" element={<SignUp />}/>
           </Route> */}
-          {/* <Route element={<DashboardLayout />}>
+          <Route element={<DashboardLayout />}>
             <Route path="/dashboard" element={<DashboardPage />} />
-            <Route path="/courses" element={<CouresPage />} />
-            <Route path="/" element={<RegisterPage />} />
-          </Route> */}
+            {/* <Route path="/courses" element={<CouresPage />} /> */}
+            {/* <Route path="/" element={<RegisterPage />} /> */}
+          </Route>
           <Route element={<LandingPageLayout />}>
             <Route path="/" element={<HomePage/>} />
+            <Route path="/about" element={<AboutPage />} />
           </Route>
       </Routes>
     </BrowserRouter>

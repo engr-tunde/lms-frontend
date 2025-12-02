@@ -1,5 +1,13 @@
 @import "tailwindcss";
 
+@theme {
+  --color-primary-deep: rgb(20,71,230);
+  /* --color-primary-light: #00167a;
+  --color-secondary-brand: #e33874;
+  --color-custom-red: #ff4b4a;
+  --color-custom-gold: #ffcd67; */
+}
+
 
 ody {
     
@@ -8,6 +16,7 @@ ody {
 .bg-img{
     background-image: url("/public/images/new_health-img.jpg");
 }
+
 
 .bg-slide1{
     background-image: url("/public/images/bg-shape1.png");

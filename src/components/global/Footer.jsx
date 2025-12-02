@@ -6,7 +6,7 @@ import { FaInstagram } from "react-icons/fa";
 
 const Footer = () => {
     return (
-        <div className="w-full  flex justify-center z-50 shadow-md shadow-transparent py-5 bg-img h-[450px] text-white">
+        <div className="w-full  flex justify-center z-50 shadow-md shadow-transparent py-5 bg-[rgb(32,34,48)] h-[450px] text-white">
             <div className="flex  justify-center items-center w-[90%]">
                 <div className="flex flex-col gap-4 justify-center items-center w-full">
                     <div className="flex justify-between p-1 w-full">
@@ -15,9 +15,9 @@ const Footer = () => {
                             <p className="text-xl">Stay updated with our latest news and offers</p>
                         </div>
                         <div className="flex flex-col justify-center items-start gap-2">
-                            <div className="flex border-1 border-white rounded-md h-[55px] w-[450px]">
+                            <div className="flex border border-white rounded-md h-[55px] w-[450px]">
                                 <div className="h-full w-[65%]"><input type="text" className="h-full w-full" /></div>
-                                <div className="h-full w-[35%] bg-[rgb(254,194,0)] flex justify-center text-xl font-normal text-center items-center">Subscribe</div>
+                                <div className="h-full w-[35%] bg-primary-deep flex justify-center text-xl font-normal text-center items-center">Subscribe</div>
                             </div>
                             <p className="text-end">By subscribing, you agree to our Privacy Policy</p>
                         </div>
@@ -48,7 +48,7 @@ const Footer = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="border-t-[2px] border-white w-full p-3">
+                    <div className="border-t-2 border-white w-full p-3">
                         <div className="flex flex-col gap-2 justify-center items-center">
                             <h3 class="company-name tracking-widest">LANCLUB</h3>
                             <p class="Copyright" >Copyright &copy; 2025, © 2025 Lanklub. All rights reserved</p>
