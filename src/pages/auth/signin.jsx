@@ -9,7 +9,7 @@ import { loginUser } from "../../api";
 import { errorMessage, successMessage } from "../../utils/helper";
 import Cookies from "js-cookie";
 
-const Login = () => {
+const SigninPage = () => {
   const initialValues = loginUserValues();
   const validationSchema = validateLogin();
   const history = useNavigate();
@@ -92,4 +92,4 @@ const Login = () => {
     // </div>
   );
 };
-export default Login;
+export default SigninPage;

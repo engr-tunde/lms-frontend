@@ -13,7 +13,7 @@ import { useEffect, useState } from "react";
 import Cookies from "js-cookie";
 import OTPInputField from "../../components/form/OTPInputField.jsx";
 
-const VerifyAccount = () => {
+const VerifyAccountPage = () => {
   const [minutes, setMinutes] = useState(0);
   const [seconds, setSeconds] = useState(10);
   const [otp, setOtp] = useState("");
@@ -142,4 +142,4 @@ const VerifyAccount = () => {
     </div>
   );
 };
-export default VerifyAccount;
+export default VerifyAccountPage;

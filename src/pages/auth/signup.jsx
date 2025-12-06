@@ -1,14 +1,14 @@
 import { Link } from "react-router-dom";
-import CustomFormik from "../../components/form/CustomFormik";
-import AppInputField from "../../components/form/AppInputField";
-import AppSubmitButton from "../../components/form/AppSubmitButton";
-import { validateRegister } from "../../utils/validationSchema";
+import CustomFormik from "../../components/form/CustomFormik.jsx";
+import AppInputField from "../../components/form/AppInputField.jsx";
+import AppSubmitButton from "../../components/form/AppSubmitButton.jsx";
+import { validateRegister } from "../../utils/validationSchema.js";
 import { registerUserValues } from "../../utils/InitialValues.jsx";
 import { useNavigate } from "react-router-dom";
 import { errorMessage, successMessage } from "../../utils/helper.js";
 import { registerUser } from "../../api/index.js";
 
-const Register = () => {
+const SignupPage = () => {
   const initialValues = registerUserValues();
   const validationSchema = validateRegister();
 
@@ -84,4 +84,4 @@ const Register = () => {
     </div>
   );
 };
-export default Register;
+export default SignupPage;

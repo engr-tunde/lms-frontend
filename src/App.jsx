@@ -1,15 +1,15 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import HomePage from "./pages/home/HomePage";
-import Login from "./pages/auth/Login";
 import AuthLayout from "./layout/AuthLayout";
 import LandingPageLayout from "./layout/LandingPageLayout";
 import AboutPage from "./pages/about/AboutPage";
 import DashboardLayout from "./layout/DashboardLayout";
 import DashboardPage from "./pages/dashboard/DashboardPage";
-import Register from "./pages/auth/register";
 import CoursePage from "./pages/course/coursePage";
-import VerifyAccount from "./pages/auth/verify-account";
 import { ToastContainer } from "react-toastify";
+import SignupPage from "./pages/auth/signup";
+import SigninPage from "./pages/auth/signin";
+import VerifyAccountPage from "./pages/auth/verify-account";
 
 // import CouresPage from './pages/courses/CoursePage';
 // import SignUp from './pages/auth/SingUp';
@@ -32,9 +32,9 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route element={<AuthLayout />}>
-            <Route path="/login" element={<Login />} />
-            <Route path="/register" element={<Register />} />
-            <Route path="/verify-account" element={<VerifyAccount />} />
+            <Route path="/login" element={<SigninPage />} />
+            <Route path="/register" element={<SignupPage />} />
+            <Route path="/verify-account" element={<VerifyAccountPage />} />
           </Route>
           <Route element={<DashboardLayout />}>
             <Route path="/dashboard" element={<DashboardPage />} />
