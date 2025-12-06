@@ -3,8 +3,8 @@ const OurOffers = ({image, title, details}) => {
         <div className="flex gap-4 items-center">
             <div className=" h-[90px] w-[100px] rounded-md flex items-center p-3 bg-white"><img src={`${image}`} alt="" /></div>
             <div>
-                <h3 className="text-[24px] font-semibold ">{title}</h3>
-                <p className="text-[20px] font-normal w-[80%]">{details}</p>
+                <h3 className="text-[24px] font-semibold text-custom-title ">{title}</h3>
+                <p className="text-[20px] font-normal w-[80%] text-custom-text">{details}</p>
             </div>
         </div>
     )

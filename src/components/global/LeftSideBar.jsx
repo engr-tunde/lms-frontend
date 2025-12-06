@@ -11,9 +11,9 @@ const LeftsideBar = () => {
   
   return (
     <div className="bg-white p-3 overflow-y-auto w-full border-r-2 border-r-[#ff75871f] text-[rgb(5,5,5)]">
-      <img src="/images/logo-plain.jpeg" alt="" className="w-[70px] m-auto" />
+      <img src="/images/health-logo-1.svg" alt="" className="w-[70px] m-auto" />
       
-      <div className="w-full flex flex-col ps-3 mt-2 h-[90vh] overflow-y-scroll">
+      <div className="w-full flex flex-col ps-3 mt-4 h-[90vh] overflow-y-scroll">
         {sidebarData?.map((item, index) => {
           const IconComponent = FaIcons[item.icon];
           const hasChildren = item.children && item.children.length > 0;

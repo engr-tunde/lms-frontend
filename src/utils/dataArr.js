@@ -5,23 +5,6 @@ export const sidebarData = [
     icon: "FaTachometerAlt",
     link: "/dashboard",
   },
-
-  {
-    title: "Assignment",
-    icon: "FaBook",
-    // icon: "FaHouseUser",
-    link: "",
-    children: [
-      {
-        title: "in progress",
-        link: "/in-progress",
-      },
-      {
-        title: "Completed",
-        link: "/Completed",
-      }
-    ],
-  },
   {
     title: "Certificate",
     link: "/Certificate",
@@ -52,7 +35,7 @@ export const sidebarData = [
     title: "Courses",
     icon: "FaBook",
     // icon: "FaHouseUser",
-    link: "/courses",
+    link: "/course",
   },
    
   {
@@ -158,7 +141,7 @@ export const dashboardCards = [
     title: "Certificates",
     details: "More Info",
     className: "bg-[rgb(21,112,187)]",
-    IoIcon: "FaCertificate"
+    FaIcon: "FaCertificate"
     // rgb(255,193,7)
   },
   {
@@ -166,7 +149,7 @@ export const dashboardCards = [
     title: "polocies",
     details: "More Info",
     className: "bg-[rgb(254,194,0)]",
-    IoIcon: "FaGavel"
+    FaIcon: "FaGavel"
   },
 ]
 
@@ -276,16 +259,6 @@ export const feedback = [
     identityA: "Alvin Lim",
     titleA: "Technical Co-Founder, CTO at Dimensional",
     courseA: "web development", 
-    detailsB: "Udemy was truly a game-changer and a great guide for me as we brought Dimensional to life.", 
-    picB: "Alvin_Lim.jpeg", 
-    titleB: "Technical Co-Founder, CTO at Dimensional", 
-    identityB: "Alvin Lim",
-    courseB: "web development",
-    detailsC: "Udemy was truly a game-changer and a great guide for me as we brought Dimensional to life.", 
-    picC: "Alvin_Lim.jpeg",
-    identityC: "Alvin Lim",
-    titleC: "Technical Co-Founder, CTO at Dimensional",
-    courseC: "web development", 
   },
   {
     detailsA: "Udemy was truly a game-changer and a great guide for me as we brought Dimensional to life.", 
@@ -293,36 +266,57 @@ export const feedback = [
     identityA: "Alvin Lim",
     titleA: "Technical Co-Founder, CTO at Dimensional",
     courseA: "web development", 
-    detailsB: "Udemy was truly a game-changer and a great guide for me as we brought Dimensional to life.", 
-    picB: "Alvin_Lim.jpeg", 
-    titleB: "Technical Co-Founder, CTO at Dimensional", 
-    identityB: "Alvin Lim",
-    courseB: "web development",
-    detailsC: "Udemy was truly a game-changer and a great guide for me as we brought Dimensional to life.", 
-    picC: "Alvin_Lim.jpeg",
-    identityC: "Alvin Lim",
-    titleC: "Technical Co-Founder, CTO at Dimensional",
-    courseC: "web development",
-
   },
   {
     detailsA: "Udemy was truly a game-changer and a great guide for me as we brought Dimensional to life.", 
-    picA: "Alvin_Lim",
-    identityA: "Alvin Lim.jpeg",
+    picA: "Alvin_Lim.jpeg",
+    identityA: "Alvin Lim",
     titleA: "Technical Co-Founder, CTO at Dimensional",
     courseA: "web development", 
-    detailsB: "Udemy was truly a game-changer and a great guide for me as we brought Dimensional to life.", 
-    picB: "Alvin_Lim.jpeg", 
-    titleB: "Technical Co-Founder, CTO at Dimensional", 
-    identityB: "Alvin Lim",
-    courseB: "web development",
-    detailsC: "Udemy was truly a game-changer and a great guide for me as we brought Dimensional to life.", 
-    picC: "Alvin_Lim.jpeg",
-    identityC: "Alvin Lim",
-    titleC: "Technical Co-Founder, CTO at Dimensional",
-    courseC: "web development", 
   },
-
+  {
+    detailsA: "Udemy was truly a game-changer and a great guide for me as we brought Dimensional to life.", 
+    picA: "Alvin_Lim.jpeg",
+    identityA: "Alvin Lim",
+    titleA: "Technical Co-Founder, CTO at Dimensional",
+    courseA: "web development", 
+  },
+  {
+    detailsA: "44Udemy was truly a game-changer and a great guide for me as we brought Dimensional to life.", 
+    picA: "Alvin_Lim.jpeg",
+    identityA: "Alvin Lim",
+    titleA: "Technical Co-Founder, CTO at Dimensional",
+    courseA: "web development", 
+  },
+  {
+    detailsA: "Udemy was truly a game-changer and a great guide for me as we brought Dimensional to life.", 
+    picA: "Alvin_Lim.jpeg",
+    identityA: "Alvin Lim",
+    titleA: "Technical Co-Founder, CTO at Dimensional",
+    courseA: "web development", 
+  },
+  {
+    detailsA: "Udemy was truly a game-changer and a great guide for me as we brought Dimensional to life.", 
+    picA: "Alvin_Lim.jpeg",
+    identityA: "Alvin Lim",
+    titleA: "Technical Co-Founder, CTO at Dimensional",
+    courseA: "web development", 
+  },
+  {
+    detailsA: "Udemy was truly a game-changer and a great guide for me as we brought Dimensional to life.", 
+    picA: "Alvin_Lim.jpeg",
+    identityA: "Alvin Lim",
+    titleA: "Technical Co-Founder, CTO at Dimensional",
+    courseA: "web development", 
+  },
+  {
+    detailsA: "Udemy was truly a game-changer and a great guide for me as we brought Dimensional to life.", 
+    picA: "Alvin_Lim.jpeg",
+    identityA: "Alvin Lim",
+    titleA: "Technical Co-Founder, CTO at Dimensional",
+    courseA: "web development", 
+  },
+  
 ]
 
 export const stats = [

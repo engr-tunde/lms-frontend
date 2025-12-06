@@ -4,14 +4,17 @@ import Slide from "../../components/cards/Slides";
 import OurOffers from "../../components/uniqueContent/OurOffer";
 import { FaChevronRight } from "react-icons/fa";
 import { FaChevronLeft } from "react-icons/fa";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { courseContent, briefContent, slides, feedback } from "../../utils/dataArr";
 import { useNavigate } from "react-router-dom";
 import CourseCard from "../../components/cards/CourseCard";
 import FeedBackCard from "../../components/cards/FeedBackCard";
+import { fetchAllCourses } from "../../api";
 
 
 const HomePage = () => {
+    const { data, loading, mutate } = fetchAllCourses();
+    console.log(data)
     // const slides = [
     //     {
     //         id:"1",
@@ -52,9 +55,18 @@ const HomePage = () => {
         
     // ]
     console.log( slides.length)
+
+    const timerRef = useRef(null)
     
      const [currentSlideIndex, setCurrentSlideIndex] = useState(0)
-     const translateBy = currentSlideIndex * 1110
+     const [feedBackIndex, setFeedBackIndex] = useState(0)
+     
+     const gotoRes = (i) => {
+        setFeedBackIndex(i)
+     }
+     
+     const translateBy = currentSlideIndex * 1168
+     const secondtranslate = feedBackIndex * 1070
 
     //  const [nextSlide, setNextSlide ] = useState()
     //  const [prevSlide, setPrevSlide ] = useState()
@@ -72,17 +84,24 @@ const HomePage = () => {
 
      const nextSlide = () => {
         const isLastSlide = currentSlideIndex === slides.length - 1
-
         const newIndex =  isLastSlide ? 0 : currentSlideIndex + 1
         setCurrentSlideIndex(newIndex) 
         console.log(newIndex)
+
+         
      };
      const prevSlide = () => {
         const isFirstSlide = currentSlideIndex === 0
         const newIndex =  isFirstSlide ? slides.length - 1 : currentSlideIndex - 1
         setCurrentSlideIndex(newIndex) 
         console.log(newIndex)
+
+        const isFirstRes = feedBackIndex === 0
+         const newRes = isFirstRes ? feedback.length : currentSlideIndex - 1
+        setFeedBackIndex(newRes) 
      }
+
+     
 
      const navigate = useNavigate();
 
@@ -91,7 +110,7 @@ const HomePage = () => {
      }
 
     return (
-        <div className="w-screen flex flex-col">
+        <div className="w-screen flex flex-col font-[stack]">
             <div className="mt-[200px] w-full z-10">
                 <div className="flex flex-col justify-center w-full items-center">
                     {/* first section */}
@@ -127,8 +146,8 @@ const HomePage = () => {
                    {/* 4th section */}
                    <div className=" w-[85%] flex justify-center items-center py-12 gap-2 ">
                         <div className={`w-[280px] bg-center justify-center items-center flex gap-0.5 flex-col p-3 text-black rounded-lg`}>
-                         <h3 className="text-3xl font-semibold w-[270px]">Learn essential career and life saving skills</h3>
-                            <p className="w-[270px]">Udemy helps you build in-demand skills fast and advance your career in a changing job market.</p>
+                         <h3 className="text-3xl font-semibold w-[270px] text-custom-title">Learn essential career and life saving skills</h3>
+                            <p className="w-[270px] text-custom-text">Udemy helps you build in-demand skills fast and advance your career in a changing job market.</p>
                         </div>
                         <div className="w-[90%] justify-center items-center grid grid-cols-3 gap-5">
                             {
@@ -146,8 +165,8 @@ const HomePage = () => {
                         <div className="w-[90%] flex gap-2 items-center justify-center py-10">
                             <div className="w-[50%] h-[480px]  "><img src="/images/about1.jpg" alt="" className="rounded-md w-full h-full"/></div>
                             <div className="flex flex-col gap-4 w-[50%] p-2">
-                                <h3 className="text-[48px] font-semibold">Delving into Our Health Literacy Odysse</h3>
-                                <p className="text-[20px] font-normal">We are dedicated to fostering a vibrant community of language learners committed to linguistic proficiency and cultural appreciation. Established in 2002</p>
+                                <h3 className="text-[48px] font-semibold text-custom-title">Delving into Our Health Literacy Odysse</h3>
+                                <p className="text-[20px] font-normal text-custom-text">We are dedicated to fostering a vibrant community of language learners committed to linguistic proficiency and cultural appreciation. Established in 2002</p>
                                 <p className="text-[20px] font-normal">Our journey began with a vision to provide an immersive and comprehensive language education experience guided by.</p>
                                 <div onClick={handleClick} className="cursor-pointer w-[150px] h-[50px] bg-primary-deep flex justify-center items-center rounded-md text-white">
                                     Enroll Now
@@ -159,14 +178,14 @@ const HomePage = () => {
                    <div className="w-full h-[] pt-2.5 pb-[50px] flex justify-center item-center">
                         <div className="w-[85%] flex flex-col gap-5 justify-center items-center">
                             <div className="flex justify-between items-center w-full pr-8 pl-4">
-                                <p  className="text-[48px] font-bold w-[280px] leading-tight text-black">Our Popular Courses</p>
-                                <div onClick={handleClick} className="cursor-pointer p-3 h-[60px] flex justify-center text-center items-center text-2xl font-semibold text-white rounded-md bg-primary-deep">Explore all courses</div>
+                                <p  className="text-[28px] font-bold w-[300px] leading-tight text-black ">Our Popular Courses</p>
+                                <div onClick={handleClick} className="cursor-pointer p-3 h-[45px] flex justify-center text-center items-center text-[18px] font-semibold text-white rounded-md bg-primary-deep">Explore all courses</div>
                             </div>
                             <div className="w-full p-3 justify-center items-center grid grid-cols-4 gap-2">
                                 {
-                                    courseContent.map((content, i)=> (
+                                    data?.data.slice(0,4).map((content, i)=> (
                                         <div key={i}>
-                                            <CourseCard title={content.title}  tag={content.tag} image={content.image} discount={content.discount} price={content.price} />
+                                            <CourseCard title={content.title}  tag={content.category} image={content.image} discount={content.total_price} price={content.price} />
                                         </div>
                                     ))
                                 }
@@ -177,35 +196,36 @@ const HomePage = () => {
                     {/*8th  section */}
                     <div className="w-full flex h-[600px]">
                         <div className="h-full w-[50%]"><img src="/images/why-us1.jpg" alt="" className="h-full" /></div>
-                        <div className="w-[50%] h-full p-8 flex flex-col gap-5 items-start justify-center">
-                            <h2 className="text-[50px] font-bold w-[70%]">Unraveling the Unique WHY US</h2>
+                        <div className="w-[50%] h-full p-8 flex flex-col gap-5 items-start justify-center text-custom-title">
+                            <h2 className="text-[50px] font-bold w-[70%] text-custom-text">Unraveling the Unique WHY US</h2>
                             <OurOffers image="/images/expert.svg" title="Expert Faculty" details="Emphasize the qualifications and expertise of your instructors. Highlight their experience."/>
                             <OurOffers image="/images/small.svg" title="Expert Faculty" details="Emphasize the qualifications and expertise of your instructors. Highlight their experience."/>
                             <OurOffers image="/images/learning.svg" title="Expert Faculty" details="Emphasize the qualifications and expertise of your instructors. Highlight their experience."/>
                         </div>
                     </div>
                     {/* 9th section */} 
-                    <div className="w-full pt-2.5  pb-[50px] flex flex-col justify-center items-center">                              
+                    <div className="w-full pt-2.5  pb-[30px] flex flex-col justify-center items-center mt-10">                              
                         <div className="flex flex-col items-center justify-start h-[550px]">
                             <div className="flex flex-col justify-start items-center w-[90%]  gap-4 ">
-                                <h2 className="text-[58px] font-bold w-[60%]  leading-tight text-black text-center">Upcoming Courses These will be started soon</h2>
+                                <h2 className="text-[58px] font-bold w-[70%]  leading-tight text-center text-custom-title">Upcoming Courses These will be started soon</h2>
                                 <div className={`h-[360px] relative 
                                     `}>
-                                    <div className={`h-full w-[1100px] overflow-hidden `}>
-                                            <div className={`flex gap-3 h-full transform ease-out duration-300 `} style={{width: `calc(1100 * ${slides.length}px)`, transform: `translateX(${-translateBy}px)`}}>
+                                    <div className={`h-full w-[1180px] overflow-hidden`}>
+                                            <div className={`flex gap-3 h-full transform ease-out duration-300 `} style={{width: `calc(280 * ${data?.data.length}px)`, transform: `translateX(${-translateBy}px)`}}>
                                                 { 
-                                                    slides.map((content, i) => { 
+                                                    data?.data.map((content, i) => { 
                                                     console.log(currentSlideIndex )
                                                     console.log(currentSlideIndex * 1024 )
                                                     // const translate = currentSlideIndex * 826
                                                     return(
                                                     <div className={`w-full h-full `} key={i} slides={content.id}>
-                                                        <Slide titleA={content.titleA}  tagA={content.tagA} imageA={content.imageA} discountA={content.discountA} priceA={content.priceA}
-                                                        titleB={content.titleB}  tagB={content.tagB} imageB={content.imageB} discountB={content.discountB} priceB={content.priceB}
+                                                        <Slide titleA={content.title}  tagA={content.category} discountA={content.discount} priceA={content.price}
+                                                        // titleB={content.titleB}  tagB={content.tagB} imageB={content.imageB} discountB={content.discountB} priceB={content.priceB}
 
-                                                        titleC={content.titleC}  tagC={content.tagC} imageC={content.imageC} discountC={content.discountC} priceC={content.priceC}
+                                                        // titleC={content.titleC}  tagC={content.tagC} imageC={content.imageC} discountC={content.discountC} priceC={content.priceC}
                                                         
-                                                        titleD={content.titleD}  tagD={content.tagD} imageD={content.imageD} discountD={content.discountD} priceD={content.priceD}/>
+                                                        // titleD={content.titleD}  tagD={content.tagD} imageD={content.imageD} discountD={content.discountD} priceD={content.priceD} 
+                                                        />
                                                         {/* <Slide priceX={slide.priceX} titleX={slide.titleX}  
                                                         priceY={slide.priceY} titleY={slide.titleY} /> */}
                                                     </div>
@@ -224,38 +244,38 @@ const HomePage = () => {
                                 
                                 
                             </div>
-                            {/* <div className="flex flex-col justify-center items-center ] w-[90%]  gap-4 ">
-                                <h2 className="text-[58px] font-bold w-[60%]  leading-tight text-white text-center">Upcoming Courses These will be started soon</h2>
-                                <div className="flex items-center justify-center gap-6 relative">
-                                    <Slide price="2" />
-                                    <Slide />
-                                    <div className="absolute bg-[rgb(254,194,0)] size-[50px] rounded-full left-[-18px] p-1 flex justify-center items-center"><FaChevronLeft /></div>
-                                    <div className="absolute bg-[rgb(254,194,0)] size-[50px] rounded-full right-[-18px]
-                                    p-1 flex justify-center items-center"><FaChevronRight/></div>
-                                </div>
-                            </div> */}
+                           
                         </div>
                     </div>
                     {/* 10th section */} 
                     <div className="w-full pt-2.5 pb-[50px] flex flex-col justify-center items-center my-16">
                         <div className="flex flex-col justify-center items-center w-[90%]  gap-4">
                             <h2 className="text-[50px] font-semibold">What our students say</h2>
-                            <div className={`h-[360px] relative 
+                            <div className={`h-[340px] relative 
                                     `}>
-                                    <div className={`h-full w-[1100px] overflow-hidden `}>
-                                            <div className={`flex gap-3 h-full transform ease-out duration-300 `} style={{width: `calc(1100 * ${feedback.length}px)`, transform: `translateX(${-translateBy}px)`}}>
+                                    <div className={`h-[95%] w-[1070px] overflow-hidden `}>
+                                            <div className={`flex gap-3 h-full transform ease-out duration-300 `} style={{width: `calc(345 * ${feedback.length}px)`, transform: `translateX(${-secondtranslate}px)`}}>
                                                 { 
                                                     feedback.map((content, i) => { 
                                                     console.log(currentSlideIndex )
                                                     console.log(currentSlideIndex * 1024 )
+                                                    useEffect(() => {
+                                                        if(timerRef.current){
+                                                            clearTimeout(timerRef.current)
+                                                        }
+                                                        timerRef.current = setTimeout(() => {
+                                                            gotoRes()
+                                                        }, 2000 );
+                                                        return () => clearTimeout(timerRef.current)
+                                                        },[gotoRes])
                                                     // const translate = currentSlideIndex * 826
                                                     return(
                                                     <div className={`w-full h-full `} key={i} slides={content.id}>
                                                         <FeedBackCard courseA={content.courseA}  detailsA={content.detailsA} picA={content.picA} identityA={content.identityA}
                                                         titleA={content.titleA}
-                                                        courseB={content.courseB}  detailsB={content.detailsB} picB={content.picB} identityB={content.identityB} titleB={content.titleB}
+                                                        // courseB={content.courseB}  detailsB={content.detailsB} picB={content.picB} identityB={content.identityB} titleB={content.titleB}
 
-                                                        courseC={content.courseC}  detailsC={content.detailsC} identityC={content.identityC} picC={content.picC} titleC={content.titleB}
+                                                        // courseC={content.courseC}  detailsC={content.detailsC} identityC={content.identityC} picC={content.picC} titleC={content.titleB}
                                                         />
                                                         {/* <Slide priceX={slide.priceX} titleX={slide.titleX}  
                                                         priceY={slide.priceY} titleY={slide.titleY} /> */}
@@ -264,12 +284,16 @@ const HomePage = () => {
                                                     })
                                                 }
                                             </div>   
-                                        </div>
+                                    </div>
                                     
-                                    <div className="flex p-3 justify-center items-center w-full">
-                                        <div className="absolute z-50 bg-white size-10 shadow-[1px_3px_8px_3px_#000c0275] rounded-full -left-3 top-[35%]  p-1 flex justify-center  items-center transform translate-x-0 translate-y-1/2 cursor-pointer" onClick={prevSlide}><FaChevronLeft /></div>
-                                        <div className="absolute z-50 bg-white size-10 shadow-[1px_3px_3px_3px_#000c0275] rounded-full -right-1.5 top-[35%]
-                                            p-1 flex justify-center items-center transform translate-x-0 translate-y-1/2 cursor-pointer" onClick={nextSlide}  ><FaChevronRight/></div>
+                                    <div className="flex justify-center items-center">
+                                        {
+                                            feedback?.slice(0, 3).map((item, i) => {
+                                                return (
+                                                    <div key={i} className="text-7xl mx-3 cursor-pointer" onClick={() => gotoRes(i)}>.</div>
+                                                )
+                                            })
+                                        } 
                                     </div>
                                 </div>
                             {/* <p className=" text-center w-[60%] text-[21px] font-medium">

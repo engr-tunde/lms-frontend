@@ -18,7 +18,7 @@ const  FeedBackCard = ({courseA, detailsA, picA, titleA, identityA, courseB, det
  }) => {
     
     return (
-        <div className="grid grid-cols-3 gap-2 justify-center items-center w-[1100px] p-2" slide={slide}>
+        <div className=" w-[345px] p-2" slide={slide}>
             <div className={`w-[345px] h-[300px] bg-no-repeat bg-cover bg-center items-center flex gap-2 flex-col p-7 text-black border border-[rgb(233,234,242)] rounded-lg`}>
                 <div className="flex flex-col w-full gap-3">
                     <div className="size-[30px]"><img src={`/images/quote.svg`} className="size-[41px]" alt="" /></div>
@@ -36,7 +36,7 @@ const  FeedBackCard = ({courseA, detailsA, picA, titleA, identityA, courseB, det
                     </div>
                 </div>
             </div>
-            <div className={`w-[345px] h-[300px] items-center flex gap-2 flex-col p-7 text-black border border-[rgb(233,234,242)] rounded-lg`}>
+            {/* <div className={`w-[345px] h-[300px] items-center flex gap-2 flex-col p-7 text-black border border-[rgb(233,234,242)] rounded-lg`}>
                 <div className="flex flex-col w-full gap-3">
                     <div className="size-[30px]"><img src={`/images/quote.svg`} className="size-[35px]" alt="" /></div>
                     <p className="text-black text-sm font-semibold">{detailsB}</p>
@@ -69,7 +69,7 @@ const  FeedBackCard = ({courseA, detailsA, picA, titleA, identityA, courseB, det
                         <IoIosArrowForward />
                     </div>
                 </div>
-            </div>
+            </div> */}
             
         </div>
     )

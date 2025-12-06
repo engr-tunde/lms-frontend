@@ -1,10 +1,13 @@
+@import url("https://fonts.googleapis.com/css2?family=Stack+Sans+Headline:wght@200..700&display=swap");
+
 @import "tailwindcss";
+
 
 @theme {
   --color-primary-deep: rgb(20,71,230);
-  /* --color-primary-light: #00167a;
-  --color-secondary-brand: #e33874;
-  --color-custom-red: #ff4b4a;
+  --color-custom-title: #2A2B3F;
+  --color-custom-text: #595673;
+  /*--color-custom-red: #ff4b4a;
   --color-custom-gold: #ffcd67; */
 }
 
@@ -26,5 +29,5 @@ ody {
     background-image: url("/public/images/about2.jpg");
 }
 .primary-btn {
-  @apply bg-[rgb(254,194,0)]  text-black hover:scale-110 ease-in duration-200 rounded-md cursor-pointer;
+  @apply bg-primary-deep text-white hover:scale-110 ease-in duration-200 rounded-md cursor-pointer;
 }

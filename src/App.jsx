@@ -1,12 +1,14 @@
 import "../public/styles/global.css"
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import HomePage from './pages/home/HomePage';
-// import Login from './pages/auth/Login';
-// import AuthLayout from './layouts/AuthLayout';
+import Login from './pages/auth/Login';
+import AuthLayout from "./layout/AuthLayout";
 import LandingPageLayout from "./layout/LandingPageLayout";
 import AboutPage from "./pages/about/AboutPage";
 import DashboardLayout from "./layout/DashboardLayout";
 import DashboardPage from "./pages/dashboard/DashboardPage";
+import Register from "./pages/auth/Register";
+import CoursePage from "./pages/course/coursePage";
 
 
 
@@ -19,10 +21,10 @@ function App() {
     <>
       <BrowserRouter>
       <Routes>
-        {/* <Route element={<AuthLayout />}>
+        <Route element={<AuthLayout />}>
             <Route path="/login" element={<Login />} />
-             <Route path="/register" element={<SignUp />}/>
-          </Route> */}
+             <Route path="/register" element={<Register />}/>
+          </Route>
           <Route element={<DashboardLayout />}>
             <Route path="/dashboard" element={<DashboardPage />} />
             {/* <Route path="/courses" element={<CouresPage />} /> */}
@@ -31,6 +33,7 @@ function App() {
           <Route element={<LandingPageLayout />}>
             <Route path="/" element={<HomePage/>} />
             <Route path="/about" element={<AboutPage />} />
+            <Route path="/course" element={<CoursePage />} />
           </Route>
       </Routes>
     </BrowserRouter>

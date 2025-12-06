@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const AboutPage = () => {
     return (
         <div className="w-screen">
-            <div className="w-full flex flex-col justify-center items-center">
+            <div className="w-full flex flex-col justify-center items-center font-[stack]">
                 <div className="w-full bg-[rgb(247,249,250)] border-b border-black flex justify-center">
                     <div className="w-[80%] flex justify-between items-center h-[550px] pt-10  ">
                         <h2 className="text-5xl font-bold pl-10">Welcome to where possibilities begin</h2>

@@ -4,7 +4,7 @@ import { RiDoubleQuotesR } from "react-icons/ri";
 const ClientCard = ({details,client, title}) => {
 
     return (
-        <div className="flex flex-col gap-3 w-[380px] text-start">
+        <div className="flex flex-col gap-3 w-[350px] text-start">
             <div className="flex gap-px text-primary-deep text-[16px]">
                 <RiDoubleQuotesL />
                 <RiDoubleQuotesR />
