@@ -7,7 +7,7 @@
 //         lastName: itemData ? itemData.lastName  : "",
 //         phoneNumber: itemData ? itemData.phoneNumber : "",
 //         password: itemData ? itemData.password : "",
-//         confirmPassword: itemData ? itemData.confirmPassword : "", 
+//         confirmPassword: itemData ? itemData.confirmPassword : "",
 //     }
 //     return initialValues;
 // }
@@ -22,9 +22,10 @@ export const loginUserValues = () => {
 
 export const registerUserValues = () => {
   const initialValues = {
-    fullName: "",
+    name: "",
     email: "",
     password: "",
+    confirmPassword: "",
   };
   return initialValues;
 };
