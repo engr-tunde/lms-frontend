@@ -25,7 +25,7 @@ const SignupPage = () => {
           history("/verify-account", {
             state: { userId: data.userId },
           }),
-        3000
+        1000
       );
     } else {
       errorMessage(response?.data?.error);

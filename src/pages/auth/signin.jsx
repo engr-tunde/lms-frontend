@@ -5,8 +5,8 @@ import AppSubmitButton from "../../components/form/AppSubmitButton";
 import { loginUserValues } from "../../utils/InitialValues";
 import { validateLogin } from "../../utils/validationSchema";
 import { useNavigate } from "react-router-dom";
-import { loginUser } from "../../api";
-import { errorMessage, successMessage } from "../../utils/helper";
+import { loginUser, resendVerifyAccountOTP } from "../../api";
+import { errorMessage, infoMessage, successMessage } from "../../utils/helper";
 import Cookies from "js-cookie";
 
 const SigninPage = () => {
@@ -14,18 +14,32 @@ const SigninPage = () => {
   const validationSchema = validateLogin();
   const history = useNavigate();
 
-  const handleSubmit = async (values, formikActions) => {
-    console.log(values);
-    const res = await loginUser(values);
-    console.log("res", res);
-    if (res.status === 206) {
-      Cookies.set("u-x-key", res.headers["u-x-key"]);
-      successMessage(res?.data?.message);
-      setTimeout(() => {
-        history("/dashboard");
-      }, 300);
+  const handleSubmit = async (values) => {
+    const response = await loginUser(values);
+    if (response.status === 200) {
+      if (response.data.message === "Unverified email") {
+        const verifyAccountCodeResponse = await resendVerifyAccountOTP({
+          userId: response?.data?.userId,
+        });
+        if (verifyAccountCodeResponse?.status === 200) {
+          infoMessage("Verify your account first. Check email for OTP!");
+          setTimeout(
+            () =>
+              history("/verify-account", {
+                state: { userId: response?.data?.userId },
+              }),
+            1500
+          );
+        } else {
+          errorMessage(response?.data?.error);
+        }
+      } else {
+        successNotification(response.data.message);
+        Cookies.set("u-x", response?.headers["u-x-key"]);
+        () => history("/dashboard");
+      }
     } else {
-      errorMessage(res?.data?.error);
+      errorNotification(response?.data?.error);
     }
   };
 
