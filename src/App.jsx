@@ -10,6 +10,8 @@ import { ToastContainer } from "react-toastify";
 import SignupPage from "./pages/auth/signup";
 import SigninPage from "./pages/auth/signin";
 import VerifyAccountPage from "./pages/auth/verify-account";
+import ForgetPasswordPage from "./pages/auth/forget-password";
+import ResetPasswordPage from "./pages/auth/reset-password";
 
 // import CouresPage from './pages/courses/CoursePage';
 // import SignUp from './pages/auth/SingUp';
@@ -35,6 +37,9 @@ function App() {
             <Route path="/login" element={<SigninPage />} />
             <Route path="/register" element={<SignupPage />} />
             <Route path="/verify-account" element={<VerifyAccountPage />} />
+            <Route path="/forget-password" element={<ForgetPasswordPage />} />
+            <Route path="/reset-password" element={<ResetPasswordPage />} />
+
           </Route>
           <Route element={<DashboardLayout />}>
             <Route path="/dashboard" element={<DashboardPage />} />

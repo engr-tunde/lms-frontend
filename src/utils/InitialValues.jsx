@@ -20,10 +20,19 @@ export const loginUserValues = () => {
   return initialValues;
 };
 
+
 export const registerUserValues = () => {
   const initialValues = {
     name: "",
     email: "",
+    password: "",
+    confirmPassword: "",
+  };
+  return initialValues;
+};
+
+export const resetUserValues = () => {
+  const initialValues = {
     password: "",
     confirmPassword: "",
   };

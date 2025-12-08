@@ -17,6 +17,7 @@ const SigninPage = () => {
   const handleSubmit = async (values) => {
     const response = await loginUser(values);
     if (response.status === 200) {
+      console.log("response", response)
       if (response.data.message === "Unverified email") {
         const verifyAccountCodeResponse = await resendVerifyAccountOTP({
           userId: response?.data?.userId,
@@ -51,7 +52,7 @@ const SigninPage = () => {
         validationSchema={validationSchema}
         onSubmit={handleSubmit}
       >
-        <div className=" flex flex-col gap-5 p-5 py-8 w-[30%] justify-center border border-[rgb(233,234,242)] text-custom-text items-center rounded-md    ">
+        <div className=" flex flex-col gap-3 p-5 py-8 w-[30%] justify-center border border-[rgb(233,234,242)] text-custom-text items-center rounded-md    ">
           <div className="mt-5 ">
             <div className="flex gap-5 justify-center items-center p-2 bg-white shadow-[1px_1px_2px_1px_#000c0275]">
               <div>
@@ -75,7 +76,8 @@ const SigninPage = () => {
               type="password"
             />
           </div>
-          <div className="w-[90%]">
+          <Link to="/forget-password" className="w-[90%] mt-0.5 cursor-pointer"><p className="text-custom-text text-end text-sm font-medium">Forget Password ?</p></Link>
+          <div className="w-[90%] mt-2">
             <AppSubmitButton title="login" />
           </div>
           <div className="flex flex-col gap-3 justify-center items-center pt-3 text-custom-text border-t border-custom-text w-[90%]">

@@ -110,12 +110,12 @@ const HomePage = () => {
                 <img src="/images/shape2.svg" alt="" className="w-[130px]" />
               </div>
               {/* <Button size="500px" title="Explore all courses"/> */}
-              <div
-                onClick={handleClick}
+              <Link
+                to="/course"
                 className=" cursor-pointer p-3 flex justify-center text-center items-center size-[150px] text-2xl font-semibold rounded-full text-white bg-primary-deep"
               >
                 Explore all courses
-              </div>
+              </Link>
             </div>
           </div>
 
@@ -166,12 +166,12 @@ const HomePage = () => {
                 Our journey began with a vision to provide an immersive and
                 comprehensive language education experience guided by.
               </p>
-              <div
-                onClick={handleClick}
+              <Link
+                to="/register"
                 className="cursor-pointer w-[150px] h-[50px] bg-primary-deep flex justify-center items-center rounded-md text-white"
               >
                 Enroll Now
-              </div>
+              </Link>
             </div>
           </div>
 

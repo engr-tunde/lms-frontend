@@ -42,6 +42,27 @@ export const validateLogin = () => {
   return validationSchema;
 };
 
+export const validateResetPassword = () => {
+  const validationSchema = yup.object({
+    password: yup
+      .string()
+      .required("password is required")
+      .min(8, "password must be at least 8 character long")
+      .matches(/[a-z]+/, "password must contain at least one lower case letter")
+      .matches(/[A-Z]+/, "password must contain at least one Upper case letter")
+      .matches(/\d+/, "password must contain at least one number")
+      .matches(
+        /[@$!%#*?&]+/,
+        "password must contain at least one special character"
+      ),
+    confirmPassword: yup
+      .string()
+      .oneOf([yup.ref("password")], "password must match")
+      .required("confirm password is required"),
+  });
+  return validationSchema;
+}
+
 export const validateRegister = () => {
   const validationSchema = yup.object({
     name: yup.string().required("Full name is required"),
