@@ -3,14 +3,14 @@ import { loginUserValues } from "../../utils/InitialValues";
 import AppInputField from "../../components/form/AppInputField";
 import AppSubmitButton from "../../components/form/AppSubmitButton";
 import { forgetPasssword } from "../../api";
+import Cookies from "js-cookie";
 import { errorMessage, infoMessage, successMessage } from "../../utils/helper";
 
 const ForgetPasswordPage = () => {
     const initialValues = loginUserValues();
 
     const handleSubmit = async(values) => {
-      const response = await forgetPasssword({ values
-      });
+      const response = await forgetPasssword(values);
       console.log("FPresponse", response)
       if (response?.status === 200) {
           Cookies.set("u-x", response?.headers["u-x-key"]); 

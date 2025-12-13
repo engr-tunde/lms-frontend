@@ -7,7 +7,7 @@ export const sidebarData = [
   },
   {
     title: "Certificate",
-    link: "/Certificate",
+    link: "/dashboard/Certificate",
     icon: "FaCertificate",
     
   },
@@ -15,13 +15,13 @@ export const sidebarData = [
     title: "Old Certificate",
     icon: "FaCertificate",
     // icon: "FaCertificate",
-    link: "/Old-Certificate",
+    link: "/dashboard/Old-Certificate",
   },
   {
     title: "Policy Manuals",
     icon: "FaShoppingBag",
     // icon: "FaHouseUser",
-    link: "/Policy-Manuals",
+    link: "/dashboard/Policy-Manuals",
     
   },
   {
@@ -35,7 +35,7 @@ export const sidebarData = [
     title: "Courses",
     icon: "FaBook",
     // icon: "FaHouseUser",
-    link: "/course",
+    link: "dashboard/userCourse",
   },
    
   {
@@ -364,3 +364,69 @@ export const FirmFeedBack = [
   },
 ]
 
+
+export const whatToLearn = [
+  {
+    content: "Learn how to leverage AI code assistants to speed up your work flow as a Salesforce developer!"
+  },
+  {
+    content: "Learn how to leverage AI code assistants to speed up your work flow as a Salesforce developer!"
+  },
+  {
+    content: "Learn how to leverage AI code assistants to speed up your work flow as a Salesforce developer!"
+  },{
+    content: "Learn how to leverage AI code assistants to speed up your work flow as a Salesforce developer!"
+  },
+  {
+    content: "Learn how to leverage AI code assistants to speed up your work flow as a Salesforce developer!"
+  },
+  {
+    content: "Learn how to leverage AI code assistants to speed up your work flow as a Salesforce developer!"
+  }
+]
+
+export const relatedTopics = [
+  {
+    topic: "Artificial intelligence (AI)",
+  },
+  {
+    topic: "IT and Software",
+  },
+  {
+    topic: "Advance Artificial ",
+  }
+]
+
+export const singleCourseContent = [
+  {
+    title: "Phamarcy essetials for begineers",
+    objective: "Here, the learner is properly introduced to Phamarcy asd a beginner"
+  },
+  {
+    title: "Phamarcy essetials for begineers",
+    objective: "Here, the learner is properly introduced to Phamarcy asd a beginner"
+  },
+  {
+    title: "Phamarcy essetials for begineers",
+    objective: "Here, the learner is properly introduced to Phamarcy asd a beginner"
+  }
+]
+
+export const aboutComponent = [
+  {
+    icon: "MdOndemandVideo",
+    value: "on-demand videos"
+  },
+  {
+    icon: "MdOutlineSpeakerNotes",
+    value: "Access on diffrent device"
+  },
+  {
+    icon: "MdOutlineMobileFriendly",
+    value: "on-demand videos"
+  },
+  {
+    icon: "IoIosInfinite",
+    value: "Full time access"
+  },
+]

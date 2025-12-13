@@ -16,7 +16,8 @@ const SigninPage = () => {
 
   const handleSubmit = async (values) => {
     const response = await loginUser(values);
-    if (response.status === 200) {
+    console.log(response)
+    if (response?.status === 200) {
       console.log("response", response)
       if (response.data.message === "Unverified email") {
         const verifyAccountCodeResponse = await resendVerifyAccountOTP({
@@ -35,12 +36,12 @@ const SigninPage = () => {
           errorMessage(response?.data?.error);
         }
       } else {
-        successNotification(response.data.message);
+        successMessage(response.data.message);
         Cookies.set("u-x", response?.headers["u-x-key"]);
-        () => history("/dashboard");
+         history("/dashboard");
       }
     } else {
-      errorNotification(response?.data?.error);
+      errorMessage(response?.data?.error);
     }
   };
 

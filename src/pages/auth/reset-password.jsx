@@ -21,7 +21,7 @@ const ResetPasswordPage = () => {
             token,
             userId
           });
-          console.log("FPresponse", response)
+          console.log("RPresponse", response)
           if (response?.status === 200) {
               Cookies.set("u-x", response?.headers["u-x-key"]); 
               infoMessage(response?.data?.message);

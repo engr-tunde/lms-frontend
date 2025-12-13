@@ -12,6 +12,8 @@ import SigninPage from "./pages/auth/signin";
 import VerifyAccountPage from "./pages/auth/verify-account";
 import ForgetPasswordPage from "./pages/auth/forget-password";
 import ResetPasswordPage from "./pages/auth/reset-password";
+import SingleProductPage from "./pages/singleProduct/singleProductPage";
+import userCoursePage from "./pages/course/userCourse";
 
 // import CouresPage from './pages/courses/CoursePage';
 // import SignUp from './pages/auth/SingUp';
@@ -43,6 +45,7 @@ function App() {
           </Route>
           <Route element={<DashboardLayout />}>
             <Route path="/dashboard" element={<DashboardPage />} />
+            <Route path="/dashboard/userCourse" element={<userCoursePage />} />
             {/* <Route path="/courses" element={<CouresPage />} /> */}
             {/* <Route path="/" element={<RegisterPage />} /> */}
           </Route>
@@ -50,6 +53,7 @@ function App() {
             <Route path="/" element={<HomePage />} />
             <Route path="/about" element={<AboutPage />} />
             <Route path="/course" element={<CoursePage />} />
+            <Route path="/singleProduct" element={<SingleProductPage />} />
           </Route>
         </Routes>
       </BrowserRouter>

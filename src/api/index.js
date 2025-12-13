@@ -8,6 +8,7 @@ import {
   VERIFY_EMAIL,
   CHECK_EMAIL,
   RESEND_VERIFICATION_OTP,
+  FETCH_USER_COURSES,
   FETCH_ALL_COURSES,
   RESET_PASSWORD,
 } from "../constants/routes";
@@ -51,6 +52,13 @@ export const forgetPasssword = async (values) => {
   const result = await mutationRequest(FORGOT_PASSWORD, "post", values);
   return result;
 };
+
+//user courses
+export const fetchUserCourses = () => {
+  const { data, error, loading, mutate } = useSWR(FETCH_USER_COURSES, fetcher);
+  return { data, error, loading, mutate };
+};
+
 
 //public courses
 export const fetchAllCourses = () => {

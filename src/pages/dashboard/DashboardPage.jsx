@@ -1,3 +1,4 @@
+import DashboardCouseStatus from "../../components/cards/DashbaordCourseStatus";
 import DashboardCard from "../../components/cards/DashboardCard";
 import Table from "../../components/Table";
 import { dashboardCards } from "../../utils/dataArr";
@@ -64,8 +65,16 @@ const DashboardPage = ({data}) => {
                     </div>
 
                     <div className="w-full flex justify-between mt-20">
-                        <div className="w-[45%] p-1 border border-custom-text rounded-md">< Table tableColumn={tableColumnCourses} /></div>
-                        <div className="w-[45%] p-1 border border-custom-text rounded-md">< Table tableColumn={tableColumnOrders} /></div>
+                        <div className="w-[45%] p-1 border border-custom-text rounded-md">
+                            < Table tableColumn={tableColumnCourses}
+                                rowData={data?.data}
+                                rowTemplate={DashboardCouseStatus}
+                            />
+                        </div>
+                        <div className="w-[45%] p-1 border border-custom-text rounded-md">
+                            < Table tableColumn={tableColumnOrders}
+                             />
+                        </div>
                     </div>
                 </div>
                 
