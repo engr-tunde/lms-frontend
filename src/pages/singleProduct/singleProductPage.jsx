@@ -9,16 +9,14 @@ import { singleCourseContent } from "../../utils/dataArr";
 import { useState } from "react";
 import * as MaIcons from "react-icons/md";
 import * as IaIcons from "react-icons/io";
-import { MdOndemandVideo } from "react-icons/md";
-import { MdOutlineSpeakerNotes } from "react-icons/md";
-import { MdOutlineMobileFriendly } from "react-icons/md";
-import { IoIosInfinite } from "react-icons/io";
 import AboutOfferComponent from "../../components/about/AboutOffers";
-import { Icons } from "react-toastify";
-import { useParams } from "react-router-dom";
+import { fetchSingleCourseDetails } from "../../api";
 
 const SingleProductPage = () => {
  const [openIndex, setOpenIndex] = useState(null);
+ const { data, loading, mutate } = fetchSingleCourseDetails();
+ console.log(data)
+
 //  const {id} = useParams()
 
     return (
@@ -26,7 +24,9 @@ const SingleProductPage = () => {
             <div className="w-full flex flex-col mt-36">
                 <div className="w-full bg-black text-white">
                     <div className="w-[80%] p-20 flex flex-col gap-3 justify-center text-start">
-                        <h2 className="font-bold text-4xl">Artificial Intelligence & Machine Learning for Business</h2>
+                        <h2 className="font-bold text-4xl">{
+                            console.log(data?.data)
+                            }</h2>
                         <p>The Ultimate Artificial Intelligence & Machine Learning course for CxOs, Managers, Team Leaders and Entrepreneurs</p>
                         <span>Last updated 7/2025</span>
                     </div>

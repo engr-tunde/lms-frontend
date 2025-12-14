@@ -1,3 +1,4 @@
+
 export const LOGIN_USER = "/user-auth/login";
 export const FORGOT_PASSWORD = "/user-auth/forgot-password";
 export const RESET_PASSWORD = "/user-auth/reset-password";
@@ -11,4 +12,4 @@ export const RESEND_VERIFICATION_OTP = "/user-auth/resend-verification-otp";
 
 export const FETCH_ALL_COURSES = "/public/fetch-courses"
 export const FETCH_USER_COURSES = "/user/fetch-courses"
-// export const FETCH_COURSE_DETAILS = ""
+// export const FETCH_COURSE_DETAILS = "/public/course-details"

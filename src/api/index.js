@@ -1,3 +1,4 @@
+import { useParams } from "react-router-dom";
 import useSWR from "swr";
 import {
   CHECK_SESSION,
@@ -11,6 +12,7 @@ import {
   FETCH_USER_COURSES,
   FETCH_ALL_COURSES,
   RESET_PASSWORD,
+  FETCH_COURSE_DETAILS,
 } from "../constants/routes";
 
 import { fetcher, sesionFetcher } from "./fetcher";
@@ -65,3 +67,12 @@ export const fetchAllCourses = () => {
   const { data, error, loading, mutate } = useSWR(FETCH_ALL_COURSES, fetcher);
   return { data, error, loading, mutate };
 };
+
+//single details
+export const fetchSingleCourseDetails = () => {
+  const {id} = useParams()
+  console.log(id, "id")
+  const { data, error, loading, mutate } = useSWR(`${FETCH_COURSE_DETAILS}/${id}`, fetcher);
+  console.log(data)
+  return { data, error, loading, mutate };
+}
