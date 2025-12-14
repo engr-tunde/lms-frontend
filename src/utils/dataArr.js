@@ -146,10 +146,10 @@ export const dashboardCards = [
   },
   {
     counts: 0,
-    title: "polocies",
+    title: "Orders",
     details: "More Info",
     className: "bg-[rgb(254,194,0)]",
-    FaIcon: "FaGavel"
+    FaIcon: "FaRegClock"
   },
 ]
 

@@ -15,9 +15,11 @@ import { MdOutlineMobileFriendly } from "react-icons/md";
 import { IoIosInfinite } from "react-icons/io";
 import AboutOfferComponent from "../../components/about/AboutOffers";
 import { Icons } from "react-toastify";
+import { useParams } from "react-router-dom";
 
 const SingleProductPage = () => {
  const [openIndex, setOpenIndex] = useState(null);
+//  const {id} = useParams()
 
     return (
         <div className="w-screen">

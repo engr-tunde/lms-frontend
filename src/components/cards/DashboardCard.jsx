@@ -1,9 +1,9 @@
 import { FaArrowRight } from "react-icons/fa";
 const DashboardCard = ({count, title, detail,}) => {
     return (
-      <div className="pt-2 pb-0 flex flex-col gap-3 h-[120px] bg-white shadow-[1px_1px_3px_1px_#000c0275] rounded-lg border border-[rgb(229,231,235)]">
+      <div className="pt-2 pb-0 flex flex-col gap-3 px-4 h-[120px] bg-white shadow-[1px_1px_3px_1px_#000c0275] rounded-lg border border-[rgb(229,231,235)]">
         <div className="flex px-2">
-          <div className="flex flex-col gap-2">
+          <div className="flex flex-col gap-2 ">
             <span className="text-[14px] font-light">{title}</span>
             <div className="text-[30px] font-semibold">{count}</div>
           </div>

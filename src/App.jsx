@@ -54,6 +54,7 @@ function App() {
             <Route path="/about" element={<AboutPage />} />
             <Route path="/course" element={<CoursePage />} />
             <Route path="/singleProduct" element={<SingleProductPage />} />
+            {/* <Route path="/singleProduct/:id" element={<SingleProductPage />} /> */}
           </Route>
         </Routes>
       </BrowserRouter>

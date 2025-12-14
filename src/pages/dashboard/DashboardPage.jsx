@@ -48,14 +48,14 @@ const DashboardPage = ({data}) => {
                                 return (
                                     <div className="w-full relative" key={i} >
                                         <DashboardCard count={item.counts} title={item.title} detail={item.details}  />
-                                        <div className={FaIconComponent ? "text-[rgb(139,139,139)] text-[46px] flex items-center justify-center rounded-full absolute top-[30%] right-[20%]" : null}>
-                                            {
-                                                FaIconComponent ? <FaIconComponent /> : null
-                                            }
-                                        </div>
-                                        <div className={IoIconComponent ? "text-[rgb(139,139,139)] text-[46px] flex items-center justify-center rounded-full absolute top-[30%] right-[20%]" : null}>
+                                        <div className={IoIconComponent && i%2 !== 0 ? "text-[rgb(5,150,105)] bg-[rgb(209,250,229)] p-2 text-[23px] flex items-center justify-center rounded-md absolute top-[35%] right-[12%]" : "text-[rgb(0,0,0)] bg-[rgb(254,243,199)] text-[23px] flex items-center p-2 rounded-md justify-center absolute top-[35%] right-[12%]"}>
                                             {
                                                 IoIconComponent ? <IoIconComponent /> : null
+                                            }
+                                        </div>
+                                        <div className={FaIconComponent ? "text-[rgb(61,117,238)] bg-[rgb(219,234,254)] text-[23px] p-2 flex items-center justify-center rounded-md absolute top-[35%] right-[12%]" : null}>
+                                            {
+                                                FaIconComponent ? <FaIconComponent /> : null
                                             }
                                         </div>
                                     </div>
