@@ -1,5 +1,9 @@
+import { fetchUserCourses } from "../../api";
+import CourseCard from "../../components/cards/CourseCard";
+
 const userCoursePage = () => {
     const { data, loading, mutate } = fetchUserCourses()
+    console.log("user", data)
     return (
         <div className="w-screen">
             <div className="w-full flex flex-col gap-3 p-10">
@@ -19,7 +23,7 @@ const userCoursePage = () => {
                         {
                             data?.data.map((content, i)=> (
                                 <div key={i}>
-                                    <CourseCard title={content.title}  tag={content.category} image={content.image} discount={content.total_price} price={content.price} />
+                                    <CourseCard  title={content.title}  tag={content.category} image={content.image} discount={content.total_price} price={content.price} />
                                 </div>
                             ))
                         }

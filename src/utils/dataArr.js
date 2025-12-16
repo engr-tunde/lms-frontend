@@ -430,3 +430,13 @@ export const aboutComponent = [
     value: "Full time access"
   },
 ]
+
+
+export const recentCourse = [
+ { courseStatus: "Completed",
+},
+ { courseStatus: "Completed",
+},
+ { courseStatus: "Completed",
+}
+]

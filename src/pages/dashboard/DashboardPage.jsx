@@ -1,29 +1,16 @@
-import DashboardCouseStatus from "../../components/cards/DashbaordCourseStatus";
+
+import { fetchUserOrder } from "../../api";
+import RecentCourseCard from "../../components/cards/dashboard/RecentCourseCard";
 import DashboardCard from "../../components/cards/DashboardCard";
-import Table from "../../components/Table";
-import { dashboardCards } from "../../utils/dataArr";
+import { dashboardCards, recentCourse } from "../../utils/dataArr";
 import * as FaIcons from "react-icons/fa";
 import * as IoIcons from "react-icons/io";
 
-const DashboardPage = ({data}) => {
 
-    const tableColumnCourses = [
-        {
-            title: "Courses",
-        },
-        {
-            title: "Status"
-        }
-    ]
+const DashboardPage = () => {
+    const { data, loading, mutate } = fetchUserOrder()
+    console.log(data)
 
-    const tableColumnOrders = [
-        {
-            title: "Orders",
-        },
-        {
-            title: "Status"
-        }
-    ]
     return (
         <div className="w-full p-1">
             <div className="text-2xl font-semibold mb-3">
@@ -64,18 +51,21 @@ const DashboardPage = ({data}) => {
                         }
                     </div>
 
-                    <div className="w-full flex justify-between mt-20">
-                        <div className="w-[45%] p-1 border border-custom-text rounded-md">
-                            < Table tableColumn={tableColumnCourses}
-                                rowData={data?.data}
-                                rowTemplate={DashboardCouseStatus}
-                            />
-                        </div>
-                        <div className="w-[45%] p-1 border border-custom-text rounded-md">
-                            < Table tableColumn={tableColumnOrders}
-                             />
-                        </div>
+                    <div className="w-full mt-20 flex flex-col">
+                        <h3 className="text-xl font-semibold">Recently Checked Courses</h3>
+                        <div className="w-full grid grid-cols-3 gap-6 mt-5">
+                        {
+                            recentCourse.map((item, i) => {
+                                return (
+                                    <div className="w-full" key={i}>
+                                        <RecentCourseCard courseStatus={item.courseStatus}/>
+                                    </div>
+                                )
+                            })
+                        }
                     </div>
+                    </div>
+                    
                 </div>
                 
                 

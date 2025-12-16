@@ -13,6 +13,7 @@ import {
   FETCH_ALL_COURSES,
   RESET_PASSWORD,
   FETCH_COURSE_DETAILS,
+  FETCH_USER_ORDERS,
 } from "../constants/routes";
 
 import { fetcher, sesionFetcher } from "./fetcher";
@@ -76,3 +77,9 @@ export const fetchSingleCourseDetails = () => {
   console.log(data)
   return { data, error, loading, mutate };
 }
+
+//user order
+export const fetchUserOrder = () => {
+  const { data, error, loading, mutate } = useSWR(FETCH_USER_ORDERS, fetcher);
+  return { data, error, loading, mutate };
+};

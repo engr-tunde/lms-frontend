@@ -38,7 +38,7 @@ const SigninPage = () => {
       } else {
         successMessage(response.data.message);
         Cookies.set("u-x", response?.headers["u-x-key"]);
-         history("/dashboard");
+        history("/dashboard");
       }
     } else {
       errorMessage(response?.data?.error);

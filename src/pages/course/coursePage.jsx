@@ -4,17 +4,15 @@ import CourseCard from "../../components/cards/CourseCard";
 
 const CoursePage = () => {
     const { data, loading, mutate } = fetchAllCourses()
+    console.log(data)
     return (
         <div className="w-screen">
             <div className="w-full flex flex-col gap-3 p-10">
-                <div className="mt-28 flex gap-3 items-center">
-                    <div className="size-[45px] p-1 bg-black text-white rounded-full flex items-center justify-center ">AA</div>
-                    <div>
-                        <div className="text-xl font-semibold">Welcome Back, <span>User's Name</span></div>
-                        <div>Email</div>
+                {/* <div className="mt-28 flex gap-3 items-center">
+
                     </div>
-                </div>
-                <h2 className="mt-6 text-4xl text-custom-title font-bold px-1">
+                </div> */}
+                <h2 className="mt-28 text-4xl text-custom-title font-bold px-1">
                     What to learn next...
                 </h2>
                 <div className="flex flex-col gap-2 mt-4">
@@ -23,7 +21,7 @@ const CoursePage = () => {
                         {
                             data?.data.map((content, i)=> (
                                 <div key={i}>
-                                    <CourseCard title={content.title}  tag={content.category} image={content.image} discount={content.total_price} price={content.price} />
+                                    <CourseCard course={content}  title={content.title}  tag={content.category} image={content.image} discount={content.total_price} price={content.price} />
                                 </div>
                             ))
                         }
