@@ -5,7 +5,10 @@ const Header = ({ auth, landPage }) => {
   return (
     <div className="w-full flex justify-center fixed z-50  shadow-md shadow-transparent bg-white">
       <div className="flex justify-between items-center h-[ 80px] w-[90%] py-2 bg-white ">
-        <img src="/images/health-logo.svg" alt="" className="w-[150px]" />
+        {" "}
+        <Link to="/">
+          <img src="/images/health-logo.svg" alt="" className="w-[90px]" />
+        </Link>
         <div className="flex gap-10 justify-between font-light text-[17px]">
           <Link to="/">Home</Link>
           <Link to="/about">About</Link>

@@ -6,14 +6,14 @@ export const fetcher = (url) =>
     .get(url, { withCredentials: true })
     .then((res) => {
       if (res.status === 401) {
-        Cookies.remove("u-x-key");
+        Cookies.remove("u-x");
         window.location.href = "/login";
       }
       return res.data;
     })
     .catch((err) => {
       if (err.response.status === 401) {
-        Cookies.remove("u-x-key");
+        Cookies.remove("u-x");
         window.location.href = "/login";
       }
       throw Error(err);
@@ -26,13 +26,13 @@ export const sesionFetcher = (url) =>
       if (res.status === 200) {
         return res.data;
       } else if (res.status === 401) {
-        Cookies.remove("u-x-key");
+        Cookies.remove("u-x");
         return null;
       }
     })
     .catch((err) => {
       if (err.response.status === 401) {
-        Cookies.remove("u-x-key");
+        Cookies.remove("u-x");
         return null;
       }
       throw Error(err);

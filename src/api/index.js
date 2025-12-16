@@ -2,7 +2,7 @@ import { useParams } from "react-router-dom";
 import useSWR from "swr";
 import {
   CHECK_SESSION,
-  LOGGED_IN_USER,
+  USER_PROFILE,
   LOGIN_USER,
   FORGOT_PASSWORD,
   SiGNUP_USER,
@@ -14,6 +14,7 @@ import {
   RESET_PASSWORD,
   FETCH_COURSE_DETAILS,
   FETCH_USER_ORDERS,
+  LOGOUT_USER,
 } from "../constants/routes";
 
 import { fetcher, sesionFetcher } from "./fetcher";
@@ -37,12 +38,12 @@ export const loginUser = async (values) => {
   return result;
 };
 export const checkSession = () => {
-  const { data, error, loading, mutate } = useSWR(CHECK_SESSION, sesionFetcher);
+  const { data, error, loading, mutate } = useSWR(USER_PROFILE, sesionFetcher);
   return { data, error, loading, mutate };
 };
 
-export const fetchLoggedInUser = () => {
-  const { data, error, loading, mutate } = useSWR(LOGGED_IN_USER, fetcher);
+export const fetchUserData = () => {
+  const { data, error, loading, mutate } = useSWR(USER_PROFILE, fetcher);
   return { data, error, loading, mutate };
 };
 
@@ -62,7 +63,6 @@ export const fetchUserCourses = () => {
   return { data, error, loading, mutate };
 };
 
-
 //public courses
 export const fetchAllCourses = () => {
   const { data, error, loading, mutate } = useSWR(FETCH_ALL_COURSES, fetcher);
@@ -71,15 +71,23 @@ export const fetchAllCourses = () => {
 
 //single details
 export const fetchSingleCourseDetails = () => {
-  const {id} = useParams()
-  console.log(id, "id")
-  const { data, error, loading, mutate } = useSWR(`${FETCH_COURSE_DETAILS}/${id}`, fetcher);
-  console.log(data)
+  const { id } = useParams();
+  console.log(id, "id");
+  const { data, error, loading, mutate } = useSWR(
+    `${FETCH_COURSE_DETAILS}/${id}`,
+    fetcher
+  );
+  console.log(data);
   return { data, error, loading, mutate };
-}
+};
 
 //user order
 export const fetchUserOrder = () => {
   const { data, error, loading, mutate } = useSWR(FETCH_USER_ORDERS, fetcher);
   return { data, error, loading, mutate };
+};
+
+export const logoutUser = async () => {
+  const result = await mutationRequest(LOGOUT_USER, "post", null);
+  return result;
 };

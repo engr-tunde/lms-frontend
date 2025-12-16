@@ -16,9 +16,9 @@ const SigninPage = () => {
 
   const handleSubmit = async (values) => {
     const response = await loginUser(values);
-    console.log(response)
+    console.log(response);
     if (response?.status === 200) {
-      console.log("response", response)
+      console.log("response", response);
       if (response.data.message === "Unverified email") {
         const verifyAccountCodeResponse = await resendVerifyAccountOTP({
           userId: response?.data?.userId,
@@ -37,7 +37,7 @@ const SigninPage = () => {
         }
       } else {
         successMessage(response.data.message);
-        Cookies.set("u-x", response?.headers["u-x-key"]);
+        Cookies.set("u-x", response?.headers["user-x-key"]);
         history("/dashboard");
       }
     } else {
@@ -77,7 +77,11 @@ const SigninPage = () => {
               type="password"
             />
           </div>
-          <Link to="/forget-password" className="w-[90%] mt-0.5 cursor-pointer"><p className="text-custom-text text-end text-sm font-medium">Forget Password ?</p></Link>
+          <Link to="/forget-password" className="w-[90%] mt-0.5 cursor-pointer">
+            <p className="text-custom-text text-end text-sm font-medium">
+              Forget Password ?
+            </p>
+          </Link>
           <div className="w-[90%] mt-2">
             <AppSubmitButton title="login" />
           </div>

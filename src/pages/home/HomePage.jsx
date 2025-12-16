@@ -101,7 +101,7 @@ const HomePage = () => {
                     </div>
                     <div className="flex gap-2 items-center">
                       <div className="border border-black size-[70px] rounded-full">
-                        <img src="" alt="" />
+                        {/* <img src="" alt="" /> */}
                       </div>
                       <div className="text-[20px] font-medium">watch video</div>
                     </div>
@@ -224,7 +224,7 @@ const HomePage = () => {
 
           {/* 8th section */}
           <div className="w-full py-20 grid grid-cols-1 md:grid-cols-2 gap-14 lg:gap-5">
-            <div className="col-span-1 w-full lg:w-[70%] ms-auto flex flex-col justify-center gap-4 p-2">
+            <div className="col-span-1 w-full lg:w-[70%] ms-auto flex flex-col justify-center gap-6 p-2">
               <h2 className="text-[28px] font-bold text-custom-text">
                 Unraveling the Unique WHY US
               </h2>
@@ -269,8 +269,8 @@ const HomePage = () => {
                     }}
                   >
                     {data?.data.map((content, i) => {
-                      console.log(currentSlideIndex);
-                      console.log(currentSlideIndex * 1024);
+                      // console.log(currentSlideIndex);
+                      // console.log(currentSlideIndex * 1024);
                       // const translate = currentSlideIndex * 826
                       return (
                         <div
@@ -335,8 +335,8 @@ const HomePage = () => {
                     }}
                   >
                     {feedback.map((content, i) => {
-                      console.log(currentSlideIndex);
-                      console.log(currentSlideIndex * 1024);
+                      // console.log(currentSlideIndex);
+                      // console.log(currentSlideIndex * 1024);
                       useEffect(() => {
                         if (timerRef.current) {
                           clearTimeout(timerRef.current);

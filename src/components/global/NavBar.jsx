@@ -1,6 +1,6 @@
 import { FaArrowDown, FaBars, FaUser } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import { adminMenuDropdown} from "../../utils/dataArr";
+import { adminMenuDropdown } from "../../utils/dataArr";
 import { useState } from "react";
 import { MdOutlineLightMode } from "react-icons/md";
 import { HiArrowsPointingOut } from "react-icons/hi2";
@@ -66,10 +66,12 @@ const NavBar = ({ onToggleSidebar, data }) => {
             setShowAdminDropdown((prev) => !prev);
             setShowPlusDropdown(false);
           }}
-        > 
-        {/* rgb(139,139,139) */}
+        >
+          {/* rgb(139,139,139) */}
           <FaUser className="text-[rgb(139,139,139)]" />
-          <span>{data ? data?.username : "User Account"}</span>
+          <span>
+            {data ? `Hello ${data?.name?.split(" ")[0]}` : "User Account"}
+          </span>
           <FaArrowDown className="text-[rgb(139,139,139)]" />
         </div>
         {showAdminDropdown && (

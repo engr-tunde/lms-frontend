@@ -1,19 +1,39 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { sidebarData } from "../../utils/dataArr";
 import * as FaIcons from "react-icons/fa";
 import { MdKeyboardArrowLeft, MdKeyboardArrowDown } from "react-icons/md";
 import { useState } from "react";
-
+import { logoutUser } from "../../api";
+import Cookies from "js-cookie";
+import { errorMessage } from "../../utils/helper";
 
 const LeftsideBar = () => {
   const [openIndex, setOpenIndex] = useState(null);
   const [, setShowExpenseModal] = useState(false);
-  
+
+  const history = useNavigate();
+
+  const handleLogout = async () => {
+    const response = await logoutUser();
+    if (response.status === 200) {
+      Cookies.remove("u-x");
+      history("/login");
+    } else {
+      errorMessage(response?.data?.error);
+    }
+  };
+
   return (
-    <div className="bg-white p-3 overflow-y-auto w-full border-r-2 border-r-[#ff75871f] text-[rgb(5,5,5)]">
-      <img src="/images/health-logo-1.svg" alt="" className="w-[70px] m-auto" />
-      
-      <div className="w-full flex flex-col ps-3 mt-4 h-[90vh] overflow-y-scroll">
+    <div className="h-screen flex flex-col bg-white p-3 overflow-y-hidden w-full border-r-2 border-r-[#e6e7eb87] text-[rgb(5,5,5)]">
+      <Link to="/">
+        <img
+          src="/images/health-logo-1.svg"
+          alt=""
+          className="w-[70px] m-auto"
+        />
+      </Link>
+
+      <div className="w-full flex flex-col ps-3 mt-10">
         {sidebarData?.map((item, index) => {
           const IconComponent = FaIcons[item.icon];
           const hasChildren = item.children && item.children.length > 0;
@@ -22,7 +42,7 @@ const LeftsideBar = () => {
           return (
             <div key={index} className="">
               <div
-                className="flex items-center justify-between hover:text-[#ff7588] cursor-pointer"
+                className="flex items-center justify-between hover:text-primary-deep cursor-pointer"
                 onClick={() =>
                   hasChildren && setOpenIndex(isOpen ? null : index)
                 }
@@ -36,7 +56,9 @@ const LeftsideBar = () => {
                   <span className="text-[rgb(139,139,139)]">
                     {IconComponent ? <IconComponent /> : null}
                   </span>
-                  <span className="text-[14px] font-light">{item?.title}</span>
+                  <span className="hidden md:block text-[14px] font-light">
+                    {item?.title}
+                  </span>
                 </Link>
                 {hasChildren && (
                   <div className="ml-2 p-1 hover:text-[#ff7588] ">
@@ -71,6 +93,14 @@ const LeftsideBar = () => {
             </div>
           );
         })}
+      </div>
+
+      <div
+        className="mt-auto mb-10 flex items-center gap-2 cursor-pointer"
+        onClick={handleLogout}
+      >
+        <span className="">Logout</span>
+        <FaIcons.FaSignOutAlt />
       </div>
       {/* <AddExpenseSideBarFormModal
         show={showExpenseModal}

@@ -72,7 +72,7 @@ const VerifyAccountPage = () => {
     });
     console.log("response", response);
     if (response.status === 200) {
-      Cookies.set("u-x", response?.headers["u-x-key"]);
+      Cookies.set("u-x", response?.headers["user-x-key"]);
       setTimeout(() => history("/dashboard"), 1000);
     } else {
       errorMessage(response?.data?.error);

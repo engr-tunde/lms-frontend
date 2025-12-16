@@ -6,7 +6,7 @@ const OurOffers = ({ image, title, details }) => {
       </div>
       <div>
         <h3 className="text-[22px] font-medium text-custom-title ">{title}</h3>
-        <p className="text-[18px] font-thin w-[80%] text-custom-text">
+        <p className="text-[15px] font-thin w-[80%] text-custom-text">
           {details}
         </p>
       </div>
