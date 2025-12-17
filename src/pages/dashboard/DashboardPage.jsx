@@ -6,7 +6,7 @@ import * as FaIcons from "react-icons/fa";
 import * as IoIcons from "react-icons/io";
 
 const DashboardPage = () => {
-  const { data, loading, mutate } = fetchUserData();
+  const { data, loading, mutate } = fetchUserOrder();
   console.log(data);
 
   return (
@@ -74,6 +74,21 @@ const DashboardPage = () => {
                 );
               })}
             </div>
+            
+          </div>
+          <div className="w-full mt-20 flex flex-col">
+            <h3 className="text-xl font-semibold">Recently Completed Orders</h3>
+            <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-5">
+              {
+                data?.data.map((item, i) => {
+                return (
+                  <div className="col-span-1 w-full" key={i}>
+                    <RecentCourseCard courseStatus={item} />
+                  </div>
+                );
+              })}
+            </div>
+            
           </div>
         </div>
       </div>

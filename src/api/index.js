@@ -51,7 +51,7 @@ export const resetPassword = async (values) => {
   const result = await mutationRequest(RESET_PASSWORD, "post", values);
   return result;
 };
-
+#
 export const forgetPasssword = async (values) => {
   const result = await mutationRequest(FORGOT_PASSWORD, "post", values);
   return result;
