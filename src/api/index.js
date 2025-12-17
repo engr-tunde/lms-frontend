@@ -15,6 +15,7 @@ import {
   FETCH_COURSE_DETAILS,
   FETCH_USER_ORDERS,
   LOGOUT_USER,
+  ORDER_COURSE,
 } from "../constants/routes";
 
 import { fetcher, sesionFetcher } from "./fetcher";
@@ -57,12 +58,6 @@ export const forgetPasssword = async (values) => {
   return result;
 };
 
-//user courses
-export const fetchUserCourses = () => {
-  const { data, error, loading, mutate } = useSWR(FETCH_USER_COURSES, fetcher);
-  return { data, error, loading, mutate };
-};
-
 //public courses
 export const fetchAllCourses = () => {
   const { data, error, loading, mutate } = useSWR(FETCH_ALL_COURSES, fetcher);
@@ -78,7 +73,16 @@ export const fetchSingleCourseDetails = (id) => {
   );
   return { data, error, loading, mutate };
 };
+export const orderForCourse = async (id, values) => {
+  const result = await mutationRequest(`${ORDER_COURSE}/${id}`, "post", values);
+  return result;
+};
 
+//user courses
+export const fetchUserCourses = () => {
+  const { data, error, loading, mutate } = useSWR(FETCH_USER_COURSES, fetcher);
+  return { data, error, loading, mutate };
+};
 //user order
 export const fetchUserOrder = () => {
   const { data, error, loading, mutate } = useSWR(FETCH_USER_ORDERS, fetcher);

@@ -8,9 +8,10 @@ import { useEffect, useState } from "react";
 import * as MaIcons from "react-icons/md";
 import * as IaIcons from "react-icons/io";
 import AboutOfferComponent from "../../components/about/AboutOffers";
-import { fetchSingleCourseDetails } from "../../api";
+import { fetchSingleCourseDetails, orderForCourse } from "../../api";
 import { useParams } from "react-router-dom";
 import {
+  createTransId,
   currencyFormatter,
   errorMessage,
   successMessage,
@@ -35,13 +36,14 @@ const SingleProductPage = () => {
   console.log("courseData", courseData);
 
   // Ensure the user is logged in before being able to call this function. Otherwise, take the user to the login page, and return the user here afterwards.
+  const trans_id = createTransId();
 
   const handleOrder = async () => {
     const payload = {
       total_paid: courseData?.total_price,
-      payment_reference: "Ref5453566273h",
+      payment_reference: trans_id || 25453627736335,
     };
-    const response = await orderForCourse(id);
+    const response = await orderForCourse(id, payload);
     if (response?.status === 200) {
       successMessage(response?.data?.message);
       history("/dashboard/courses");

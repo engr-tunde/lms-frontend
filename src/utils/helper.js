@@ -13,3 +13,12 @@ export const currencyFormatter = (amount) => {
   });
   return fm.format(amount);
 };
+
+export const createTransId = () => {
+  let otp = "";
+  for (let i = 0; i <= 15; i++) {
+    const randVal = Math.round(Math.random() * 9);
+    otp = otp + randVal;
+  }
+  return otp;
+};

@@ -10,8 +10,10 @@ export const CHECK_EMAIL = "/user-auth/check-email";
 export const RESEND_VERIFICATION_OTP = "/user-auth/resend-verification-otp";
 
 export const FETCH_ALL_COURSES = "/public/fetch-courses";
-export const FETCH_USER_COURSES = "/user/fetch-courses";
 export const FETCH_COURSE_DETAILS = "/public/course-details";
+export const ORDER_COURSE = "/user/order-course";
+
+export const FETCH_USER_COURSES = "/user/fetch-courses";
 export const FETCH_USER_ORDERS = "/user/fetch-orders";
 
 //
