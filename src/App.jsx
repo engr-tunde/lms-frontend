@@ -1,20 +1,20 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import HomePage from "./pages/home/HomePage";
+import HomePage from "./pages/home";
 import AuthLayout from "./layout/AuthLayout";
 import LandingPageLayout from "./layout/LandingPageLayout";
 import AboutPage from "./pages/about/AboutPage";
 import DashboardLayout from "./layout/DashboardLayout";
-import DashboardPage from "./pages/dashboard/DashboardPage";
-import CoursePage from "./pages/course/coursePage";
+import DashboardPage from "./pages/dashboard";
+import CoursePage from "./pages/courses";
 import { ToastContainer } from "react-toastify";
 import SignupPage from "./pages/auth/signup";
 import SigninPage from "./pages/auth/signin";
 import VerifyAccountPage from "./pages/auth/verify-account";
 import ForgetPasswordPage from "./pages/auth/forget-password";
 import ResetPasswordPage from "./pages/auth/reset-password";
-import SingleProductPage from "./pages/singleProduct/singleProductPage";
-import userCoursePage from "./pages/course/userCourse";
-import UserCoursePage from "./pages/course/userCourse";
+import SingleProductPage from "./pages/courses/[id]";
+import userCoursePage from "./pages/dashboard/courses";
+import UserCoursePage from "./pages/dashboard/courses";
 
 // import CouresPage from './pages/courses/CoursePage';
 // import SignUp from './pages/auth/SingUp';
@@ -42,20 +42,19 @@ function App() {
             <Route path="/verify-account" element={<VerifyAccountPage />} />
             <Route path="/forget-password" element={<ForgetPasswordPage />} />
             <Route path="/reset-password" element={<ResetPasswordPage />} />
-
           </Route>
           <Route element={<DashboardLayout />}>
             <Route path="/dashboard" element={<DashboardPage />} />
-            <Route path="/dashboard/userCourse" element={<UserCoursePage />} />
+            <Route path="/dashboard/courses" element={<UserCoursePage />} />
             {/* <Route path="/courses" element={<CouresPage />} /> */}
             {/* <Route path="/" element={<RegisterPage />} /> */}
           </Route>
           <Route element={<LandingPageLayout />}>
             <Route path="/" element={<HomePage />} />
             <Route path="/about" element={<AboutPage />} />
-            <Route path="/course" element={<CoursePage />} />
+            <Route path="/courses" element={<CoursePage />} />
             <Route path="/singleProduct" element={<SingleProductPage />} />
-            <Route path="/singleProduct/:id" element={<SingleProductPage />} />
+            <Route path="/courses/:id" element={<SingleProductPage />} />
           </Route>
         </Routes>
       </BrowserRouter>

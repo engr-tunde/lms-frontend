@@ -32,7 +32,7 @@ export const sidebarData = [
     title: "Courses",
     icon: "FaBook",
     // icon: "FaHouseUser",
-    link: "dashboard/userCourse",
+    link: "dashboard/courses",
   },
 ];
 
@@ -412,15 +412,15 @@ export const singleCourseContent = [
 export const aboutComponent = [
   {
     icon: "MdOndemandVideo",
-    value: "on-demand videos",
+    value: "Course videos",
   },
   {
     icon: "MdOutlineSpeakerNotes",
-    value: "Access on diffrent device",
+    value: "Text files (articles)",
   },
   {
     icon: "MdOutlineMobileFriendly",
-    value: "on-demand videos",
+    value: "Accessibility via devices",
   },
   {
     icon: "IoIosInfinite",

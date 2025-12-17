@@ -111,7 +111,7 @@ const HomePage = () => {
               </div>
               {/* <Button size="500px" title="Explore all courses"/> */}
               <Link
-                to="/course"
+                to="/courses"
                 className=" cursor-pointer p-3 flex justify-center text-center items-center size-[150px] text-2xl font-semibold rounded-full text-white bg-primary-deep"
               >
                 Explore all courses

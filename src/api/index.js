@@ -51,7 +51,7 @@ export const resetPassword = async (values) => {
   const result = await mutationRequest(RESET_PASSWORD, "post", values);
   return result;
 };
-#
+
 export const forgetPasssword = async (values) => {
   const result = await mutationRequest(FORGOT_PASSWORD, "post", values);
   return result;
@@ -70,14 +70,12 @@ export const fetchAllCourses = () => {
 };
 
 //single details
-export const fetchSingleCourseDetails = () => {
-  const { id } = useParams();
+export const fetchSingleCourseDetails = (id) => {
   console.log(id, "id");
   const { data, error, loading, mutate } = useSWR(
     `${FETCH_COURSE_DETAILS}/${id}`,
     fetcher
   );
-  console.log(data);
   return { data, error, loading, mutate };
 };
 

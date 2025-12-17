@@ -12,7 +12,7 @@ const Header = ({ auth, landPage }) => {
         <div className="flex gap-10 justify-between font-light text-[17px]">
           <Link to="/">Home</Link>
           <Link to="/about">About</Link>
-          <Link to="/course">Courses</Link>
+          <Link to="/courses">Courses</Link>
           <Link to="/contact">Contact</Link>
         </div>
         {/* <Link to="/login" className={auth ? "p-3 bg-[rgb(254,194,0)] text-black text-3xl rounded-md items-center" : "hidden" }>Enroll Now</Link> */}

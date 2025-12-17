@@ -1,17 +1,8 @@
 import { currencyFormatter } from "../../utils/helper";
 
-const CourseCard = ({
-  course,
-  price,
-  title,
-  tag,
-  image,
-  discount,
-  position,
-  action,
-  normal,
-  img,
-}) => {
+const CourseCard = ({ course }) => {
+  console.log("course", course);
+
   // const navigate = useNavigate();
 
   //  const handleClick = () => {
