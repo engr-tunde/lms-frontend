@@ -15,6 +15,7 @@ import ResetPasswordPage from "./pages/auth/reset-password";
 import SingleProductPage from "./pages/courses/[id]";
 import userCoursePage from "./pages/dashboard/courses";
 import UserCoursePage from "./pages/dashboard/courses";
+import ContactPage from "./pages/contact";
 
 // import CouresPage from './pages/courses/CoursePage';
 // import SignUp from './pages/auth/SingUp';
@@ -51,9 +52,9 @@ function App() {
           </Route>
           <Route element={<LandingPageLayout />}>
             <Route path="/" element={<HomePage />} />
+            <Route path="/contact" element={<ContactPage />} /> 
             <Route path="/about" element={<AboutPage />} />
             <Route path="/courses" element={<CoursePage />} />
-            <Route path="/singleProduct" element={<SingleProductPage />} />
             <Route path="/courses/:id" element={<SingleProductPage />} />
           </Route>
         </Routes>

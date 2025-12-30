@@ -38,3 +38,15 @@ export const resetUserValues = () => {
   };
   return initialValues;
 };
+
+export const contactValues = () => {
+  const initialValues = {
+    fullName: "",
+    email: "",
+    phoneNumber: "",
+    country: "",
+    subject: "",
+    message: ""
+  };
+  return initialValues;
+};

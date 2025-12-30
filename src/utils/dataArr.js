@@ -433,3 +433,18 @@ export const recentCourse = [
   { courseStatus: "Completed" },
   { courseStatus: "Completed" },
 ];
+
+export const contacts = [
+  {
+    icon: "MdWhatsapp",
+    mail: "info@globaltriumph.ng"
+  },
+  {
+    icon: "MdOutlineMarkEmailRead",
+    mail: "+2348823323789"
+  },
+  {
+    icon: "MdOutlineMessage",
+    mail: "+2348823323789"
+  }
+]

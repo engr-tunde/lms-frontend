@@ -22,11 +22,11 @@ const CoursePage = () => {
 
                     </div>
                 </div> */}
-          <h2 className="mt-28 text-4xl text-custom-title font-bold px-1">
+          <h2 className="mt-16 text-3xl text-custom-title font-bold px-1">
             What to learn next...
           </h2>
           <div className="flex flex-col gap-2 mt-4">
-            <h3 className="text-3xl text-custom-text font-bold px-1">
+            <h3 className="text-2xl text-custom-text font-bold px-1">
               Recomend for you
             </h3>
             <div className="grid grid-cols-4 gap-3 w-full py-2 mt-1">

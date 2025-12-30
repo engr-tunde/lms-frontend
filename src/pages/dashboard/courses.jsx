@@ -9,9 +9,12 @@ const UserCoursePage = () => {
         <div className="w-screen">
             <div className="w-full flex flex-col gap-3 pX-8">
                 <div className=" flex gap-3 items-center">
-                    <div className="size-[45px] p-1 bg-black text-white rounded-full flex items-center justify-center ">AA</div>
+                    <div className="size-[45px] p-1 bg-black text-white      rounded-full flex items-center justify-center ">AA</div>
                     <div>
-                        <div className="text-xl font-semibold">Welcome Back, <span>User's Name</span></div>
+                        <div className="text-xl font-semibold">Welcome Back, 
+                            <span>
+                            User's Name
+                            </span></div>
                         <div>Email</div>
                     </div>
                 </div>

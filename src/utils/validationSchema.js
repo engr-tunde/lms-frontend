@@ -88,3 +88,20 @@ export const validateRegister = () => {
   });
   return validationSchema;
 };
+
+export const validateContactDetails = () => {
+  const validationSchema = yup.object({
+    fullName: yup.string().required("Enter your name"),
+    email: yup
+      .string()
+      .email("Invalid email provided")
+      .required("Email is missing"),
+    country: yup.string().required("country is missing"),
+    phoneNumber: yup
+      .number("Must be a number")
+      .required("phone number is required"),
+    subject: yup.string().required("subject is missing"),
+    message: yup.string().required("messsge is required"),
+  });
+  return validationSchema;
+};

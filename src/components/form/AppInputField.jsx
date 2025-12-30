@@ -2,7 +2,7 @@ import { useFormikContext } from "formik";
 import { useState } from "react";
 import { FaEye } from "react-icons/fa";
 
-const AddInputField = ({
+const AppInputField = ({
   name,
   type = "text",
   placeholder,
@@ -57,4 +57,4 @@ const AddInputField = ({
   );
 };
 
-export default AddInputField;
+export default AppInputField;
