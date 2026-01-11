@@ -16,6 +16,7 @@ import SingleProductPage from "./pages/courses/[id]";
 import userCoursePage from "./pages/dashboard/courses";
 import UserCoursePage from "./pages/dashboard/courses";
 import ContactPage from "./pages/contact";
+import UserProfile from "./pages/dashboard/userProfile";
 
 // import CouresPage from './pages/courses/CoursePage';
 // import SignUp from './pages/auth/SingUp';
@@ -47,6 +48,7 @@ function App() {
           <Route element={<DashboardLayout />}>
             <Route path="/dashboard" element={<DashboardPage />} />
             <Route path="/dashboard/courses" element={<UserCoursePage />} />
+            <Route path="/dashboard/profile" element={<UserProfile />} />
             {/* <Route path="/courses" element={<CouresPage />} /> */}
             {/* <Route path="/" element={<RegisterPage />} /> */}
           </Route>

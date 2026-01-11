@@ -39,7 +39,7 @@ export const sidebarData = [
 export const adminMenuDropdown = [
   {
     title: "Profile",
-    link: "/profile",
+    link: "dashboard/profile",
     icon: "FaUserCircle",
   },
   {
@@ -446,5 +446,12 @@ export const contacts = [
   {
     icon: "MdOutlineMessage",
     mail: "+2348823323789"
+  }
+]
+
+export const designates = [
+  {
+    name: "Name",
+    email: "Email"
   }
 ]

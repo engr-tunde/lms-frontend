@@ -1,14 +1,15 @@
 import { fetchUserCourses, fetchUserData } from "../../api";
 import CourseCard from "../../components/cards/CourseCard";
+import UserDetails from "../../components/dashboard/user-details";
 
 const UserCoursePage = () => {
     // const { data, loading, mutate } = fetchUserData();
     const { data, loading, mutate } = fetchUserCourses()
     console.log("user", data)
     return (
-        <div className="w-screen">
+        <div className="w-full p-1">
             <div className="w-full flex flex-col gap-3 pX-8">
-                <div className=" flex gap-3 items-center">
+                {/* <div className=" flex gap-3 items-center">
                     <div className="size-[45px] p-1 bg-black text-white      rounded-full flex items-center justify-center ">AA</div>
                     <div>
                         <div className="text-xl font-semibold">Welcome Back, 
@@ -17,7 +18,8 @@ const UserCoursePage = () => {
                             </span></div>
                         <div>Email</div>
                     </div>
-                </div>
+                </div> */}
+                <UserDetails />
                 <h2 className="mt-6 text-4xl text-custom-title font-bold px-1">
                     What to learn next...
                 </h2>

@@ -8,14 +8,15 @@ import { fetchUserData } from "../api";
 const DashboardLayout = ({ children }) => {
   const [sidebarOpen, setSidebarOpen] = useState(true);
   const { data, loading } = fetchUserData();
+  console.log(data)
 
   return (
-    <div className="flex w-screen min-h-screen gap-3 overflow-y-hidden bg-[]">
+    <div className="flex w-screen gap-3 overflow-y-hidden bg-[]">
       {/* left side */}
       <div
         className={`${
           sidebarOpen ? "block" : "hidden"
-        } flex w-[16%] h-screen sticky top-0`}
+        } flex w-[16%] h-screen sticky top-0 `}
       >
         <LeftsideBar />
       </div>

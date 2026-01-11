@@ -15,7 +15,7 @@ const NavBar = ({ onToggleSidebar, data }) => {
     <div className="flex py-2 px-6 justify-between items-center">
       <div>
         <FaBars
-          className="text-4xl p-2 border border-[rgb(229,231,235)] rounded-md text-[rgb(139,139,139)] hover:bg-[rgb(254,194,0)] hover:text-white"
+          className="text-4xl p-2 border border-[rgb(229,231,235)] rounded-md text-[rgb(139,139,139)] hover:bg-[rgb(139,139,139)] hover:text-white"
           onClick={onToggleSidebar}
         />
       </div>

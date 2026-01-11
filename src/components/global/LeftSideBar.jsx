@@ -96,7 +96,7 @@ const LeftsideBar = () => {
       </div>
 
       <div
-        className="mt-auto mb-10 flex items-center gap-2 cursor-pointer"
+        className="mt-auto mb-10 flex items-center ml-3 gap-2 cursor-pointer"
         onClick={handleLogout}
       >
         <span className="">Logout</span>
